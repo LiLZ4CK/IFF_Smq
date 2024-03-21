@@ -1,0 +1,36 @@
+.audits-list {
+    display: flex;
+    flex-direction: column;
+    table-layout: fixed; /* Ensure fixed column widths */
+    font-size: 20px;
+    background-color: rgb(92, 20, 68);
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 90px;
+    padding-bottom: 160px;
+  }
+  
+  .audit-header {
+    display: flex;
+    background-color: #f2f2f2; /* Light gray background for header */
+  }
+  
+  .audit-header p,
+  .audit p {
+    margin: 0;
+    padding: 5px;
+    border: 1px solid #ddd; /* Simple border for cells */
+    text-align: center; /* Center-align content within cells */
+    /* Fixed width for equal-sized columns (adjust as needed) */
+    width: 36.66%; /* Assuming 6 columns, adjust for more/less */
+    /* Optional: Text wrapping or ellipsis truncation if content overflows */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 300px;
+    background-color: #ffffff;
+  }
+  
+  .audit {
+    display: flex;
+  }

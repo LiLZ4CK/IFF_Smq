@@ -1,0 +1,245 @@
+.app {
+  background-color: rgb(92, 20, 68);
+  
+  padding: 50px 250px; /* Adjust as needed */
+}
+
+.sett {
+  font-size: 30px;
+  position: absolute;
+  top: 20%;
+  right: 7%;
+  size: 100%;
+  color: #ffff;
+}
+
+.App-logo {
+  top: 0;
+  height: 70vmin;
+  pointer-events: none;
+}
+
+.Head {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 50px;
+  margin-bottom: 70px;
+}
+
+.header-button {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  margin-left: 40px;
+  margin-top: 40px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.header-button:hover {
+  background-color: #f0f0f0;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center; /* Center-align the .nav-table-container */
+  padding: 20px 100px; /* Adjust as needed */
+}
+
+.nav-table-container {
+  display: flex;
+  justify-content: center; /* Center-align the .nav-tables */
+  flex-wrap: wrap; /* Allow wrapping of .nav-table elements */
+  max-width: 1200px; /* Adjust as needed */
+}
+
+
+.nav-table {
+  flex: 1 0 auto; /* Allow the table to grow, but not shrink */
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 10px 20px; /* Adjust padding as needed */
+  margin: 10px; /* Adjust as needed */
+  overflow: hidden;
+}
+
+.nav-table h2 {
+  margin-bottom: 10px;
+  white-space: nowrap;
+  text-align: center;
+  border-bottom: 10px solid rgb(92, 20, 68);
+  padding-bottom: 20px;
+}
+
+.nav-table ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.nav-table ul li {
+  margin-bottom: 20px;
+  
+}
+
+.nav-table ul li a {
+  text-decoration: none;
+}
+
+.custom-link {
+  display: inline-block;
+  padding: 10px 20px;
+  width: 200px; /* Adjust width as needed */
+  text-align: center;
+  background-color:rgb(255, 255, 255);
+  color: black;
+  text-decoration: none;
+  border: 1px solid #666;
+  border-radius: 50px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.custom-link:hover {
+  background-color: rgb(200, 28, 44);
+  color: rgb(255, 255, 255);
+}
+
+
+.icon:hover {
+  color: rgb(200, 28, 44);
+}
+
+.icon:focus {
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  
+  .Dashboardform {
+    position: absolute;
+    top: 20%;
+    left: 0%;
+    width: 500%;
+    height: 100%;
+  }
+  .Dashboardform .app {
+    background-color: rgb(92, 20, 68);
+    
+   
+  }
+  
+  .settings {
+    font-size: 130%;
+    position: absolute;
+    top: 23%;
+    right: 110px;
+    size: 100%;
+    color: #ffff;
+  }
+  
+  .App-logo {
+    top: 0;
+    height: 70vmin;
+    pointer-events: none;
+  }
+  
+  .Head {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 50px;
+    margin-bottom: 70px;
+  }
+  
+  .header-button {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    margin-left: 40px;
+    margin-top: 40px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .header-button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .nav-container {
+    display: flex;
+    justify-content: center; /* Center-align the .nav-table-container */
+    padding: 20px 100px; /* Adjust as needed */
+  }
+  
+  .nav-table-container {
+    display: flex;
+    justify-content: center; /* Center-align the .nav-tables */
+    flex-wrap: wrap; /* Allow wrapping of .nav-table elements */
+    max-width: 1200px; /* Adjust as needed */
+  }
+  
+  
+  .nav-table {
+    flex: 1; /* Make each .nav-table take up equal space */
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding-right: 40px;
+    padding-left: 40px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    margin: 10px; /* Adjust as needed */
+    overflow: hidden;
+  }
+  
+  .nav-table h2 {
+    margin-bottom: 10px;
+    white-space: nowrap;
+    text-align: center;
+    border-bottom: 10px solid rgb(92, 20, 68);
+    padding-bottom: 20px;
+  }
+  
+  .nav-table ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .nav-table ul li {
+    margin-bottom: 20px;
+    
+  }
+  
+  .nav-table ul li a {
+    text-decoration: none;
+  }
+  
+  .custom-link {
+    display: inline-block;
+    padding: 10px 20px;
+    width: 200px; /* Adjust width as needed */
+    text-align: center;
+    background-color:rgb(255, 255, 255);
+    color: black;
+    text-decoration: none;
+    border: 1px solid #666;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .custom-link:hover {
+    background-color: rgb(200, 28, 44);
+    color: rgb(255, 255, 255);
+  }
+  
+  
+  .icon:hover {
+    color: rgb(200, 28, 44);
+  }
+  
+  .icon:focus {
+    outline: none;
+  }
+}
+  

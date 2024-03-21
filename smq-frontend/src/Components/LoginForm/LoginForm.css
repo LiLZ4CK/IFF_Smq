@@ -1,0 +1,120 @@
+.Loginform {
+    width: 120%;
+}
+
+.Loginform h1{
+    font-size: 320%;
+    color: rgb(200, 28, 44);
+    text-align: center;
+}
+
+.Loginform h3 ul a {
+    display: inline-block;
+    padding: 10px 20px;
+    width: 50%;
+    text-align: center;
+    background-color: rgb(92, 20, 68);
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    border: 1px solid #666;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.Loginform h3 ul a:hover {
+    background-color: rgb(200, 28, 44);
+    color: rgb(255, 255, 255);
+}
+
+.Loginform .wrapper .input-box{
+    position:  relative;
+    width: 100%;
+    height: 50%;
+    margin: 3% 0;
+}
+
+.Loginform  input{
+    position: relative;
+    right: 60px;
+    font-size: 120%;
+    width: 120%;
+    height: 100%;
+    background-color:rgb(175, 174, 174);
+    border-radius: 40px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.Loginform input::placeholder{
+    color: black ;
+    font-size: 15px;
+}
+
+
+.Loginform .input-box .icon{
+    position: absolute;
+    right: 2%;
+    top: 50%;
+    transform: translateY(-40%);
+}
+
+.Loginform .wrapper button {
+    font-size: 160%;
+    position: relative;
+    right: 40px;
+    width: 60%;
+    background-color:rgb(200, 28, 44);
+    color: white;
+    border-radius: 40px;
+
+}
+
+@media (max-width: 768px) {
+    .Loginform wrapper{
+        width: 100%;
+    
+    }
+    
+    .Loginform wrapper h1{
+        font-size: 60%;
+        color: rgb(200, 28, 44);
+        text-align: center;
+    }
+    
+    .Loginform wrapper .input-box{
+        position:  relative;
+        width: 100%;
+        height: 50%;
+        margin: 30% 0;
+    }
+    
+    .Loginform input-box input{
+        width: 100%;
+        height: 100%;
+        background-color:gray;
+        border-radius: 40px;
+        padding: 20% 45% 20% 20%;
+    }
+    
+    .Loginform input-box input::placeholder{
+        color: black ;
+    }
+    
+    
+    .Loginform input-box .icon{
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .Loginform wrapper button {
+        width: 1200%;
+        height: 45%;
+        background-color:rgb(200, 28, 44);
+        color: white;
+        border-radius: 45%;
+    
+    }
+    
+  }

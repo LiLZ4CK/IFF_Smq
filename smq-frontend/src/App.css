@@ -1,0 +1,43 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  position: absolute;
+  left: 3%;
+  top: 0%;
+  height: 16%;
+  pointer-events: none;
+}
+
+.boraq {
+  position: absolute;
+  left: 14%;
+  top: 0%;
+  height: 18%;
+  width: 83%;
+}
+
+.afaq {
+  position: absolute;
+  left: 3%;
+  height: 10%;
+  bottom: 1%;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10% + 2%);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+

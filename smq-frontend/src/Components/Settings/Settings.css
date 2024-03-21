@@ -1,0 +1,76 @@
+.settings {
+    text-align: center;
+    margin-top: 20px;
+    padding: 150px;
+    background: rgb(92, 20, 68);
+  }
+
+  .settings h2{
+    font-size: 50px;
+    color: white;
+  }
+  
+  .button-container {
+    margin-bottom: 20px;
+  }
+  
+  .button-container button {
+    font-family: "Kanit", sans-serif;
+    margin-right: 10px;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  .button-container buttona {
+    position: absolute;
+    right: 650px;
+    top: 630px;
+    margin-right: 10px;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  .button-container button:hover{
+    background-color: rgb(100, 99, 99);
+  }
+  .button-container buttona:hover{
+    background-color: rgb(200, 28, 44);
+  }
+  
+  .form-container {
+    width: 300px;
+    margin: 0 auto;
+  }
+  
+  .form-container input {
+    width: calc(100% - 20px);
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .form-container button {
+    width: calc(100% - 20px);
+    padding: 10px;
+    background-color: #282c34;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .form-container button:hover {
+    background-color: rgb(200, 28, 44);
+  }
+  
