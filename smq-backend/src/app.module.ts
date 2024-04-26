@@ -12,11 +12,12 @@ import { ConfigModule } from '@nestjs/config';
 import { NavModule } from './Navigation/Nav.module';
 import { AdminModule } from './Admin/Admin.module';
 import { AuditsModule } from './Audits/Audits.module';
+import { ActionsModule } from './Actions/Actions.module';
 import { GEDModule } from './GED/GED.module';
 
 
 @Module({
-  imports: [PrismaModule, AuthuserModule, SettingsModule, NavModule, AdminModule, AuditsModule, GEDModule],
+  imports: [PrismaModule, AuthuserModule, SettingsModule, NavModule, AdminModule, AuditsModule, GEDModule, ActionsModule],
   controllers: [AppController],
   providers: [AppService, PrismaService],
 })

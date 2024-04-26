@@ -1,20 +1,28 @@
 .Registerform {
     width: 120%;
+    top: 50px;
+    padding-top: 90px;
+    padding-bottom: 20px;
+    padding-right: 150px;
+    padding-left: 180px;
 }
 
 .Registerform h1{
     font-size: 350%;
-    color: rgb(200, 28, 44);
+    color: rgb(255, 255, 255);
     text-align: center;
 }
 
 .Registerform h3 ul a {
+    position: relative;
+    right: 170px;
+    top: 20px;
     display: inline-block;
     padding: 10px 20px;
     width: 50%; /* Adjust width as needed */
     text-align: center;
-    background-color: rgb(92, 20, 68);
-    color: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     text-decoration: none;
     border: 1px solid #666;
     border-radius: 50px;
@@ -48,7 +56,7 @@
 }
 
 .Registerform input::placeholder{
-    color: black ;
+    color: rgb(102, 94, 94) ;
 }
 
 .Registerform icon{
@@ -59,10 +67,12 @@
 }
 
 .Registerform .wrapper button {
-    font-size: 160%;
     position: relative;
-    right: 40px;
-    width: 60%;
+    font-size: 140%;
+    right: 60px;
+    width: 140px;
+    height: 50px;
+    text-align: center;
     background-color:rgb(200, 28, 44);
     color: white;
     border-radius: 40px;

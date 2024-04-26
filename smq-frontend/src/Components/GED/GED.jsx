@@ -1,36 +1,23 @@
 import React, { useState, useEffect } from 'react';
+import './GED.css';
 import {
-   // ChonkyActions,
-   // FileBrowser,
-   // FileContextMenu,
-   // FileHelper,
-   // FileList,
-   // FileNavbar,
-   // FileToolbar,
-   // defineFileAction,
     FullFileBrowser,
-    //FileBrowser,
-    //FileNavbar,
     ChonkyActions,
-    //ChonkyIconName,
-    //ChonkyIconProps
+    ChonkyIconName,
 } from 'chonky';
-//import { Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
 
 const myFileActions = [
     ChonkyActions.UploadFiles,
     ChonkyActions.DownloadFiles,
     ChonkyActions.DeleteFiles,
-    ChonkyActions.OpenParentFolder.button.icon
+    ChonkyActions.OpenParentFolder
 ];
-// const myAction = defineFileAction({
-//     id: 'my_action',
-//     button: {
-//         name: 'Run My Action',
-//         toolbar: true,
-//         icon: ChonkyIconName.flash, // <----
-//     },
-// });
+const tools = [
+    ChonkyActions.OpenParentFolder.button.contextMenu = true,
+    ChonkyActions.OpenParentFolder.button.toolbar = true,
+    ChonkyActions.OpenParentFolder.button.iconOnly = false,
+    ChonkyActions.OpenParentFolder.button.icon = ChonkyIconName.openParentFolder,
+];
 
 function removeLastDir(path) {
     if (!path) {
@@ -52,8 +39,8 @@ function removeLastDir(path) {
     return path;
   }
 
-let lastdir;
-const GED = () => {
+    let lastdir;
+    const GED = () => {
     const [files, setFiles] = useState([]);
     const [folderChain, setFolderChain] = useState([]);
     const [error, setError] = useState(null);
@@ -81,15 +68,13 @@ const GED = () => {
         }
         
         const responseData = await response.json(); // Extract JSON data from response
-        lastdir = responseData;
+        setFolderChain(responseData.folderChain);
         return responseData;
     };
 
     const handleOpenSelection = async (action) => {
-        console.log('action == ' + action.id)
         if (action.id === 'delete_files')
         {
-            console.log('deeeleeeeteee !!!')
             if (action.state.selectedFiles.length !== 1){
                 alert('you can delete just one file everytime')
             }
@@ -109,7 +94,8 @@ const GED = () => {
                         const responseData = await response.json(); // Extract JSON data from response
                         //alert(responseData)
                         setFiles(responseData.files);
-                        setFolderChain(responseData.folderChain);
+                        //setFolderChain(responseData.folderChain);
+                        console.log('folder chain = ' + folderChain.length)
                     }catch(error){
                         console.log('error == ' + error)
                     }
@@ -118,39 +104,32 @@ const GED = () => {
         }
         else if (action.id === 'open_parent_folder'){
             try{
-                console.log('here', action);
                 const pathh  = removeLastDir(lastdir);
                 lastdir = pathh;
-                console.log('pathh ==' + pathh)
                 const response = await fetch('http://localhost:3000/GED/open',{
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ pathh })
                 });
-                console.log('sent !!!!!!!!!!!!!!!')
                 if (!response.ok) {
                         const errorMessage = await response.text();
                         console.error("Register failed:", response.statusText);
                         alert(errorMessage)
                 }
                 const responseData = await response.json(); // Extract JSON data from response
-                console.log(responseData)
                 setFiles(responseData.files);
-                setFolderChain(responseData.folderChain);
+                //setFolderChain(responseData.folderChain);
+                console.log('folder chain = ' + folderChain.length)
         }
         catch(error){
             console.log('error == ' + error)
         }
         }
         else if (action.id === 'mouse_click_file' && action.payload.clickType === 'double') {
-             console.log('opennnnn1')
             
             if (!action.payload.file.isDir) {
-                console.log('open ittt 1 !!!' + action.payload.file.id)
                 const pdff = action.payload.file.id;
-                console.log('open ittt 2 !!!')
                 try {
-                    console.log('open pdf!')
                     const response = await fetch('http://localhost:3000/GED/pdf', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
@@ -181,11 +160,9 @@ const GED = () => {
                 return
             }
             else{
-                console.log('opennnnn2')
 
                 const pathh  = action.payload.file.id;
                 lastdir = pathh;
-                console.log('pathh ==' + pathh)
                 try{
                     
                     const response = await fetch('http://localhost:3000/GED/open',{
@@ -193,14 +170,13 @@ const GED = () => {
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ pathh })
             });
-            console.log('sent !!!!!!!!!!!!!!!')
             if (!response.ok) {
                 throw new Error('Failed to fetch directory structure');
             }
             const responseData = await response.json(); // Extract JSON data from response
-            console.log(responseData)
             setFiles(responseData.files);
             setFolderChain(responseData.folderChain);
+            console.log('folder chain = ' + folderChain.length)
         }
         catch(error){
             console.log('error == ' + error)
@@ -249,16 +225,19 @@ const GED = () => {
     }
 
     return (
-        <div style={{ height: 600, width: 1000 } } >
+        <div className='chonky'>
             <FullFileBrowser 
                 files={files}
                 //iconComponent={CustomIconSet}
                 folderChain={folderChain}
                 //fileActions={handleOpenSelection}
                 onFileAction={handleOpenSelection}
-                fileActions={myFileActions}                
+                fileActions={myFileActions}
+                toolbar={tools}
+                button={tools}
             >
             </FullFileBrowser>
+
         </div>
     );
 };

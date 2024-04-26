@@ -5,51 +5,177 @@ import Setting from './Components/Settings/Settings';
 import RegisterForm from './Components/RegisterForm/RegisterForm';
 import DashboardForm from './Components/DashboardForm/DashboardForm';
 import VerificationForm from './Components/VerificationForm/VerificationForm';
-import ListDaudit from './Components/Audits/ListDaudit'
-import GED from './Components/GED/GED'
+import ListDaudit from './Components/Audits/ListDaudit';
+import ListDaction from './Components/Actions/ListDaction';
+import NouvNC from './Components/NC/NouvNC';
+import NewAction from './Components/Actions/NewAction';
+import Cartographie from './Components/Cartographie/Cartographie';
+import GED from './Components/GED/GED';
 import Logo from '../src/Components/Assets/logo_iff.svg';
 import Boraq from '../src/Components/Assets/boraq.png';
 import Afaq from '../src/Components/Assets/afaq.png';
 import './App.css';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import { IoSettingsSharp, IoLogOutOutline, IoNotifications } from 'react-icons/io5';
+import { HiQuestionMarkCircle } from "react-icons/hi";
+import PlanningDauit from './Components/Audits/PlanningDaudit'
+import { loadCldr} from '@syncfusion/ej2-base';
+
+loadCldr(
+ require('cldr-data/supplemental/numberingSystems.json'),
+ require('cldr-data/main/fr-CH/ca-gregorian.json'),
+ require('cldr-data/main/fr-CH/numbers.json'),
+ require('cldr-data/main/fr-CH/timeZoneNames.json')
+  );
+
+
+
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoading, setIsLoading] = useState(true); // Add loading state
+  const [isOpen, setIsOpen] = useState(false);
+  const [name, setName] = useState('');
 
+
+  const toggleSettings  = () => {
+    setIsOpen(!isOpen);
+  };
   useEffect(() => {
     // Check if user is already logged in
-    const loggedInStatus = localStorage.getItem('isLoggedIn');
-    if (loggedInStatus === 'true') {
+    const checkerr = async () => {
+
+      const loggedInStatus = localStorage.getItem('isLoggedIn');
+      if (loggedInStatus === 'true') {
+      try{
+        const token = localStorage.getItem('token');
+        const response = await fetch('http://localhost:3000/check', {
+          method: 'GET',
+          headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` }
+        })
+        if (response.ok){
+          const data = await response.json();
+          setName(data.username);
+        }
+        else {
+          localStorage.removeItem('token');
+          setIsLoggedIn(false);
+        }
+      }
+      catch(error){
+        console.error(error);
+      }
       setIsLoggedIn(true);
     }
+    setIsLoading(false); // Set loading to false after checks
+  }
+    checkerr();
   }, []);
+
 
   return (
     <Router>
         <>
-          <img class='image' src={Logo} className="App-logo" alt="logo" />
+          <img class='image' src={Logo} className="App-logo" alt="logo"/>
           <img className='boraq' src={Boraq} alt="logo" />
           <img className='afaq' src={Afaq} alt="logo" />
-        </>
-      <Routes>
-        {!isLoggedIn && (<>
-          <Route path="/register" element={<RegisterForm />} />
-          <Route path="*" element={<LoginForm />} />
-        </>
-        )}
-        {isLoggedIn &&
-        (
           <>
-        <Route path="/register" element={<Navigate to="/dashboard" />} />
-        <Route path="/" element={<Navigate to="/dashboard" />} />
-        <Route path="/dashboard" element={isLoggedIn ? <DashboardForm /> : <Navigate to="/" />} />
-        <Route path="/settings" element={isLoggedIn ? <Setting /> : <Navigate to="/" />} />
-        <Route path="/List_des_audits" element={isLoggedIn ? <ListDaudit /> : <Navigate to="/" />} />
-        <Route path="/GED" element={isLoggedIn ? <GED /> : <Navigate to="/" />} />
+    </>
         </>
-        )}
-        <Route path="/VerificationForm/:token" element={<VerificationForm />} />
-        <Route path="/VerificationForm" element={<VerificationForm />} />
-      </Routes>
+      {isLoading ? (
+        <div className="loading-container">
+          <div className="spinner"></div>
+          <p>Loading...</p>
+        </div>
+      ) : (
+        
+        <>
+          {/* Your logo images */}
+          {isLoggedIn && (
+        <Navbar>
+            <Container className='Navbar'>
+              <Navbar.Brand href="/">QualIFF</Navbar.Brand>
+              <div className="Name">{name}</div>
+              <button className="info"><HiQuestionMarkCircle className="icon" /></button>
+              <button className="notif"><IoNotifications  className="icon" /></button>
+              <button className="sett" onClick={toggleSettings}>
+        <IoSettingsSharp className="icon" />
+            </button>
+                {isOpen && (
+                  <ul className="settings-list">
+                    <li>
+                      <a href="/dashboard">Account Settings</a>
+                    </li>
+                    <li>
+                      <a href="/dashboard">Privacy Settings</a>
+                    </li>
+                    <li>
+                      <a href="/dashboard">Notifications</a>
+                    </li>
+                    <li className="logout-option">
+                      <a href="/dashboard" onClick={() => {
+                        // Implement logout logic here (e.g., clear session data, redirect)
+                        alert('Are you sure you want to log out?'); // Placeholder for confirmation
+                      }}>
+                        <IoLogOutOutline className="logout-icon" />
+                        Log Out
+                      </a>
+                    </li>
+                  </ul>
+                )}
+          </Container>
+              {/* Add logo, title, and other header elements here */}
+          </Navbar>
+      )}
+          <div className="global-background"> {/* Container for background */}
+      </div>
+          <Routes>
+            {!isLoggedIn && (
+              <>
+                <Route path="/register" element={<RegisterForm />} />
+                <Route path="*" element={<LoginForm />} />
+              </>
+            )}
+            {isLoggedIn && (
+              <>
+                <Route path="/register" element={<Navigate to="/dashboard" />} />
+                <Route path="/" element={<Navigate to="/dashboard" />} />
+                <Route
+                  path="/dashboard"
+                  element={isLoggedIn ? <DashboardForm /> : <Navigate to="/" />}
+                />
+                <Route
+                  path="/settings"
+                  element={isLoggedIn ? <Setting /> : <Navigate to="/" />}
+                />
+                <Route
+                  path="/Liste_des_Actions"
+                  element={isLoggedIn ? <ListDaction /> : <Navigate to="/" />}
+                />
+                <Route
+                  path="/Liste_des_audits"
+                  element={isLoggedIn ? <ListDaudit /> : <Navigate to="/" />}
+                />
+                <Route
+                  path="/Planning_des_audits"
+                  element={isLoggedIn ? <PlanningDauit /> : <Navigate to="/" />}
+                />
+                <Route
+                  path="/Cartographie_des_processus"
+                  element={isLoggedIn ? <Cartographie /> : <Navigate to="/" />}
+                />
+                <Route path="/GED" element={isLoggedIn ? <GED /> : <Navigate to="/" />} />
+                <Route path="/Nouvelle_NC" element={isLoggedIn ? <NouvNC /> : <Navigate to="/" />} />
+                <Route path="/newAction" element={isLoggedIn ? <NewAction /> : <Navigate to="/" />} />
+              </>
+            )}
+            <Route path="/VerificationForm/:token" element={<VerificationForm />} />
+            <Route path="/VerificationForm" element={<VerificationForm />} />
+          </Routes>
+        </>
+      )}
     </Router>
   );
 }

@@ -1,0 +1,28 @@
+@import "../../../node_modules/@syncfusion/ej2-base/styles/material.css";
+@import "../../../node_modules/@syncfusion/ej2-buttons/styles/material.css";
+@import "../../../node_modules/@syncfusion/ej2-calendars/styles/material.css";
+@import "../../../node_modules/@syncfusion/ej2-dropdowns/styles/material.css";
+@import "../../../node_modules/@syncfusion/ej2-inputs/styles/material.css";
+@import "../../../node_modules/@syncfusion/ej2-lists/styles/material.css";
+@import "../../../node_modules/@syncfusion/ej2-navigations/styles/material.css";
+@import "../../../node_modules/@syncfusion/ej2-popups/styles/material.css";
+@import "../../../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css";
+@import "../../../node_modules/@syncfusion/ej2-react-schedule/styles/material.css";
+
+
+.backg {
+    position: absolute; /* Ensures background stays fixed across pages */
+    left: 60px;
+    top: 220px;
+    height: 200px;
+    width: 1800px;
+    height: 950px;
+    background-color: rgb(92, 20, 68); /* Your desired background color */
+    z-index: -1; /* Place behind content to avoid interference */
+  }
+
+.Planning  {
+    position: absolute;
+    left: 100px;
+    top: 240px;
+}

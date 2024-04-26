@@ -18,9 +18,7 @@ model User {
   name                    String  @unique
   email                   String  @unique
   password                String
-  role                    Role?    @relation(fields: [roleId], references: [id])
   roleId                  Int?
-  audit                   Audit[]
   isvirified              Boolean @default(false)
   VerificationCode        String  @default("0")
 
@@ -30,7 +28,6 @@ model Role {
   id                      Int          @id @default(autoincrement())
   name                    String       @unique
   permissions             Permission[]
-  users                   User[]
 }   
 
 enum Permission {
@@ -40,14 +37,32 @@ enum Permission {
 }
 
 model Audit {
-  id                      Int    @id @unique @default(autoincrement())
-  responsable             User   @relation(fields: [responsablename], references: [name])
-  responsablename         String
-  processus               String
-  description             String
-  type                    String
-  constat                 String
-  constatType             String
-  planningDate			      Date
-  realisationDate			    Date
+  id                 Int      @id @default(autoincrement())
+  type               String
+  code               String
+  responsableId      Int
+  processus          String
+  description        String
+  lieu               String
+  status             Int      @default(0)
+  path               String?
+  constat            String?
+  constatType        String?
+  planningDate       DateTime?
+  realisationDate    DateTime?
 }
+
+model Action {
+  id                 Int        @id @default(autoincrement())
+  responsableId      Int
+  code               String
+  priorite           String
+  libelle            String
+  type               String
+  echeance           String
+  status             String
+  cout               Int
+}
+
+
+//npx ts-node seed.ts   

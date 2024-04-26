@@ -1,6 +1,104 @@
 .App {
   text-align: center;
+
 }
+
+.global-background {
+  position: absolute; /* Ensures background stays fixed across pages */
+  left: 60px;
+  top: 220px;
+  height: 200px;
+  width: 1800px;
+  height: 600px;
+  background-color: rgb(92, 20, 68); /* Your desired background color */
+  z-index: -1; /* Place behind content to avoid interference */
+}
+
+.sett{
+  position: absolute;
+  background-color: transparent;
+  width: 30px;
+  left: 1690px;
+  top: -10px;
+}
+
+.sett .icon{
+  position: relative;;
+  font-size: 25px;
+}
+.info{
+  position: absolute;
+  background-color: transparent;
+  width: 30px;
+  left: 1730px;
+  top: -10px;
+
+}
+.info .icon{
+  position: relative;;
+  font-size: 25px;
+}
+.notif{
+  position: absolute;
+  background-color: transparent;
+  width: 30px;
+  left: 1650px;
+  top: -10px;
+
+}
+.notif .icon{
+  position: relative;;
+  font-size: 25px;
+}
+
+.Name{
+  position: absolute;
+  right: 155px;
+  font-size: 25px;
+  color: rgb(255, 255, 255);
+  top: 12px;
+}
+
+.settings-list {
+  position: fixed; /* Or absolute for relative positioning */
+  width: 30px;
+  left: 1700px;
+  height: 110px;
+  width: 200px;
+  padding: 20px;
+  /* Higher z-index to appear on top */
+  z-index: 10; /* Adjust as needed */
+  background-color: beige;
+}
+
+.Navbar {
+position: absolute;
+top: 160px;
+left: 60px;
+padding-left: 20px;
+padding-right: 20px;
+padding-top: -30px;
+background-color: rgb(102, 83, 96);
+height: 70px;
+width: 1800px;
+}
+
+
+.navbar-brand{
+  color: azure;
+  font-size: 30px;
+  text-decoration: none;
+
+}
+
+.nav-link {
+  position: relative;
+  color: rgb(255, 255, 255);
+  margin-left: 70px;
+  font-size: 20px;
+  text-decoration: none;
+
+  }
 
 .App-logo {
   position: absolute;
@@ -19,10 +117,10 @@
 }
 
 .afaq {
-  position: absolute;
+  position: fixed;
   left: 3%;
-  height: 10%;
-  bottom: 1%;
+  height: 7%;
+  bottom: 10px;
 }
 
 .App-header {
@@ -40,4 +138,10 @@
   color: #61dafb;
 }
 
+.spinner {
+  size: 1000px;
+  background-color: royalblue;
+  color: aliceblue;
+  
+}
 

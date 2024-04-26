@@ -26,11 +26,35 @@ CREATE TABLE "Role" (
 -- CreateTable
 CREATE TABLE "Audit" (
     "id" SERIAL NOT NULL,
-    "responsablename" TEXT NOT NULL,
+    "type" TEXT NOT NULL,
+    "code" TEXT NOT NULL,
+    "responsableId" INTEGER NOT NULL,
     "processus" TEXT NOT NULL,
     "description" TEXT NOT NULL,
+    "lieu" TEXT NOT NULL,
+    "status" INTEGER NOT NULL DEFAULT 0,
+    "path" TEXT,
+    "constat" TEXT,
+    "constatType" TEXT,
+    "planningDate" TIMESTAMP(3),
+    "realisationDate" TIMESTAMP(3),
 
     CONSTRAINT "Audit_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "Action" (
+    "id" SERIAL NOT NULL,
+    "responsableId" INTEGER NOT NULL,
+    "code" TEXT NOT NULL,
+    "priorite" TEXT NOT NULL,
+    "libelle" TEXT NOT NULL,
+    "type" TEXT NOT NULL,
+    "echeance" TEXT NOT NULL,
+    "status" TEXT NOT NULL,
+    "cout" INTEGER NOT NULL,
+
+    CONSTRAINT "Action_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateIndex
@@ -44,12 +68,3 @@ CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "Role_name_key" ON "Role"("name");
-
--- CreateIndex
-CREATE UNIQUE INDEX "Audit_id_key" ON "Audit"("id");
-
--- AddForeignKey
-ALTER TABLE "User" ADD CONSTRAINT "User_roleId_fkey" FOREIGN KEY ("roleId") REFERENCES "Role"("id") ON DELETE SET NULL ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "Audit" ADD CONSTRAINT "Audit_responsablename_fkey" FOREIGN KEY ("responsablename") REFERENCES "User"("name") ON DELETE RESTRICT ON UPDATE CASCADE;

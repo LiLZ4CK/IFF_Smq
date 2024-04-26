@@ -1,34 +1,91 @@
 .audits-list {
-    display: flex;
-    flex-direction: column;
-    table-layout: fixed; /* Ensure fixed column widths */
-    font-size: 20px;
-    background-color: rgb(92, 20, 68);
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 90px;
-    padding-bottom: 160px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  table-layout: fixed;
+  font-size: 20px;
+  top: 50px;
+  left: 13px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 160px;
+  height: 550px;
+  overflow-y: scroll;
+  }
+
+  .filter {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding-top: 50px;
+    grid-gap: 5px;  /* Introduce a small gap between elements */
   }
   
+  .filter input {
+    padding: 5px;
+    height: 50px;
+    width: 500px;
+    border: 1px solid #ccc;
+    margin-right: 5px;
+    flex-grow: 1;
+  }
+  
+  .filter button {
+    position: absolute;
+    left: 37%;
+    padding: 5px 10px;
+    height: 40px;
+    width: 100px;
+    background-color: rgb(200, 28, 44);
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
   .audit-header {
     display: flex;
-    background-color: #f2f2f2; /* Light gray background for header */
+    position: sticky; 
+    top: 0;
+    background-color: #f2f2f2;
+    z-index: 1;
   }
-  
-  .audit-header p,
-  .audit p {
+
+  .audit-header p{
     margin: 0;
     padding: 5px;
-    border: 1px solid #ddd; /* Simple border for cells */
-    text-align: center; /* Center-align content within cells */
-    /* Fixed width for equal-sized columns (adjust as needed) */
-    width: 36.66%; /* Assuming 6 columns, adjust for more/less */
-    /* Optional: Text wrapping or ellipsis truncation if content overflows */
+    border: 1px solid #ddd;
+    text-align: center;
+    width: 36.66%; 
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     width: 300px;
+    background-color: #7c7676;
+  }
+  
+  .audit p {
+    margin: 0;
+    padding: 5px;
+    border: 1px solid #ddd;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 300px;
+    height: 40px;
     background-color: #ffffff;
+  }
+  .audit-header p:nth-child(5), .audit-header p:nth-child(6), .audit-header p:nth-child(7) {
+    /* Apply your styles here */
+    width: 183px;
+  }
+  .audit button{
+    padding: 0px;
+    text-align: center;
+  }
+  
+  .audit p:nth-child(5), .audit p:nth-child(6), .audit p:nth-child(7) {
+    /* Apply your styles here */
+    width: 183px; /* Adjust width as needed */
   }
   
   .audit {

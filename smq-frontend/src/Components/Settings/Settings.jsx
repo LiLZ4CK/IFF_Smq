@@ -87,7 +87,7 @@ const SettingsPage = () => {
       <div className="button-container"> {/* Applying the 'button-container' class */}
         <button onClick={handleNameChange}>Change Name</button>
         <button onClick={handlePasswordChange}>Change Password</button>
-        <buttona onClick={handleLogout}> Log out</buttona>
+        <buttona onClick={handleLogout}>Log out</buttona>
       </div>
       {changeName && (
         <form className="form-container" onSubmit={handleNameSubmit}> {/* Applying the 'form-container' class */}

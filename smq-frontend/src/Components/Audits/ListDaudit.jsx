@@ -5,15 +5,16 @@ import { FaFile } from 'react-icons/fa';
 
 const AuditsList = () => {
   const [audits, setAudits] = useState([]);
+  const [filteredAudits, setFilteredAudits] = useState([]);
   const [filterValue, setFilterValue] = useState('');
 
-  // Define filterAudits function outside useEffect
   const filterAudits = (audits, filterValue) => {
     if (!filterValue) return audits; // No filter, return all audits
 
     return audits.filter(audit =>
-      audit.responsableId.toString().toLowerCase().includes(filterValue.toLowerCase()) ||
-      audit.processus.toLowerCase().includes(filterValue.toLowerCase())
+      audit.type.toLowerCase().includes(filterValue.toLowerCase()) ||
+      audit.processus.toLowerCase().includes(filterValue.toLowerCase()) ||
+      audit.code.toLowerCase().includes(filterValue.toLowerCase())
     );
   };
 
@@ -29,6 +30,7 @@ const AuditsList = () => {
         if (response.ok) {
           const data = await response.json();
           setAudits(data.audits);
+          setFilteredAudits(data.audits); // Set initial filtered data to all audits
         } else {
           console.error("Failed to fetch audits:", response.statusText);
           // Handle error, redirect user, etc.
@@ -41,40 +43,78 @@ const AuditsList = () => {
     fetchAudits();
   }, []);
 
+  const handleFilter = () => {
+    const filteredData = filterAudits(audits, filterValue);
+    setFilteredAudits(filteredData);
+  };
+
+  const openpdf = async(pdff) =>{
+    try{
+      const response = await fetch('http://localhost:3000/GED/pdf', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ pdff })
+                    });
+        
+      if (response.ok){
+        const pdfBlob = await response.blob();
+         const pdfUrl = URL.createObjectURL(pdfBlob);
+         
+         // Create a temporary anchor element
+         const anchorElement = document.createElement('a');
+         anchorElement.href = pdfUrl;
+         anchorElement.target = '_blank'; // Open in a new tab
+         anchorElement.click();
+         
+         // Clean up by revoking the URL object
+         URL.revokeObjectURL(pdfUrl);
+        }
+        else{
+          console.log('error :', response.text())
+        }
+      }
+      catch(error){
+        console.log('error:', error)
+      }
+    }
+  
   return (
+    
     <div className="audits-list">
-      <input
-        type="text"
-        placeholder="Filter by Name or Processus"
-        value={filterValue}
-        onChange={e => setFilterValue(e.target.value)}
-      />
+     <div className="filter">
+  <input
+    type="text"
+    placeholder="Filter par Code, Type ou Processus"
+    value={filterValue}
+    onChange={e => setFilterValue(e.target.value)}
+  />
+  <button onClick={handleFilter}>Filter</button>
+      </div>
 
       {/* Table header row */}
       <div className="audit-header">
-        <p>Audit ID</p>
-        <p>Responsable</p>
+        <p>Code</p>
+        <p>Type d'Audit</p>
         <p>Processus</p>
         <p>Description</p>
+        <p>Lieu</p>
         <p>Voir</p>
         <p>Rapport</p>
       </div>
 
       {/* Map through filtered audits and display information */}
-      {filterAudits(audits, filterValue).map(audit => (
+      {filteredAudits.map(audit => (
         <div key={audit.id} className="audit">
-          <p>{audit.id}</p>
-          {/* Replace with 'audit.responsablename' if your data provides it */}
-          <p>{audit.responsablename}</p>
+          <p>{audit.code}</p>
+          <p>{audit.type}</p>
           <p>{audit.processus}</p>
           <p>{audit.description}</p>
-          <p>
-            <button>
+          <p>{audit.lieu}</p>
+          <p><button onClick={() => openpdf('C:/Users/evoun/Desktop/IFF/smq-backend/storage/pdf/Item_PDF_(12).pdf')}>  {/* Pass audit.path as argument */}
               <FaEye />
             </button>
           </p>
-          <p>
-            <button>
+          <p><button>
               <FaFile />
             </button>
           </p>

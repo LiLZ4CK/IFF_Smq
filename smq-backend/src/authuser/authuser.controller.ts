@@ -1,10 +1,11 @@
-import { Body, Controller, Get, Post, Res, Redirect, Param, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, Post, Res, Redirect, Param, UseGuards, Req } from '@nestjs/common';
 import { AuthuserService } from './authuser.service';
 import { PrismaService } from '../prisma/prisma.service';
 import * as bcrypt from 'bcrypt';
 import { Response } from 'express';
 import { HttpStatus } from '@nestjs/common/enums';
 import { JwtService } from '@nestjs/jwt';
+import { AuthGuard } from './jwt.guard';
 
 @Controller()
 export class AuthuserController{
@@ -123,6 +124,19 @@ export class AuthuserController{
 		  return res.status(HttpStatus.INTERNAL_SERVER_ERROR).send('Error occurred while verifying user');
 
 		}
+	  }
+
+
+	  @Get('/check')
+	  @UseGuards(AuthGuard)
+	  async verifyuser(@Req() req:Request, @Res() res:Response){
+		const user = await this.prisma.user.findUnique({where: {email:  req['user'].email}})
+		if(!user)
+		{
+			return res.status(HttpStatus.NOT_FOUND).send('no');
+		}
+		const username = user.name
+		return res.status(HttpStatus.OK).send({username});
 	  }
 
 }

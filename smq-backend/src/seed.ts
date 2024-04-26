@@ -27,9 +27,7 @@ async function main() {
         password: await bcrypt.hash(process.env.PASS, 10),
         email: process.env.ADMIN,
         isvirified: true,
-        role:{
-            connect:{ name: 'admin'}
-        }
+        roleId: (await prisma.role.findUnique({where:{name: 'admin'}})).id
     }
   })
 }

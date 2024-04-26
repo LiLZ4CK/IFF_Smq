@@ -51,6 +51,7 @@ export class AuthuserService{
               name: name,
               email: email,
               password: bcrpass,
+              roleId: (await this.prisma.role.findUnique({where:{name: 'user'}})).id
             },
           });
           const token = this.jwtService.signAsync({email}, {secret: process.env.JWT_SECRET})

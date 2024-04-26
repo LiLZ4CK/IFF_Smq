@@ -17,11 +17,40 @@ export class GEDController {
         return pathSegments.join(path.sep);
       }
 
+      async buildFolderStructure(directoryPath) {
+        const files = await fs.readdir(directoryPath);
+        const fileDetails = await Promise.all(files.map(async (file) => {
+          const filePath = path.join(directoryPath, file);
+          const fileStats = await fs.stat(filePath);
+          if (fileStats.isDirectory()) {
+            const children = await this.buildFolderStructure(filePath);
+            return {
+              id: filePath,
+              name: file,
+              isDir: true,
+              childrenIds: children.map((child) => child.id),
+              childrenCount: children.length,
+              // Add other directory details as needed
+            };
+          } else {
+            return {
+              id: filePath,
+              name: file,
+              isDir: false,
+              // Add other file details as needed
+            };
+          }
+        }));
+        return fileDetails;
+      }
+
     @Get('all')
     async getDirectoryStructure(@Res() res: Response) {
         try {
             // If path is not provided, use the current directory
             const directoryPath = rootdir; // Adjust the directory path as needed
+            const folderStructure = await this.buildFolderStructure(directoryPath);
+            const rootFolderId = directoryPath;
             const files = await fs.readdir(directoryPath);
             
             const fileDetails = await Promise.all(files.map(async (file) => {
@@ -35,9 +64,16 @@ export class GEDController {
                     // Add other file details as needed
                 };
             }));
+            const resppp = {
+                rootFolderId,
+                fileMap: {
+                  [rootFolderId]: folderStructure[0], // Assuming the first element is the root directory
+                },
+              };
 
             // Send the response in the correct format
-            const respp = { files: fileDetails, folderChain: [{ id: directoryPath, name: directoryPath }] };
+            const respp = { files: fileDetails, folderChain:{resppp} };
+            console.log(JSON.stringify(resppp, null, 2));
             return res.status(HttpStatus.OK).send(respp);
         } catch (error) {
             console.error('Error fetching directory structure:', error);
