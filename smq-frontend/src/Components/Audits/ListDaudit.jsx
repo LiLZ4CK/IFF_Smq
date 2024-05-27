@@ -77,10 +77,20 @@ const AuditsList = () => {
         console.log('error:', error)
       }
     }
-  
+    function fixdate(datee) {
+      const formattedDate = new Date(datee).toLocaleDateString('en-GB', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        
+      });
+      return formattedDate;
+    }
   return (
     
     <div className="audits-list">
+    <div>
+    <a className="newAudit" href="/Nouvel_audit" >nouvel audit</a></div>
      <div className="filter">
   <input
     type="text"
@@ -96,7 +106,7 @@ const AuditsList = () => {
         <p>Code</p>
         <p>Type d'Audit</p>
         <p>Processus</p>
-        <p>Description</p>
+        <p>Date de réalisation</p>
         <p>Lieu</p>
         <p>Voir</p>
         <p>Rapport</p>
@@ -108,7 +118,7 @@ const AuditsList = () => {
           <p>{audit.code}</p>
           <p>{audit.type}</p>
           <p>{audit.processus}</p>
-          <p>{audit.description}</p>
+          <p>{fixdate(audit.realisationDate)}</p>
           <p>{audit.lieu}</p>
           <p><button onClick={() => openpdf('C:/Users/evoun/Desktop/IFF/smq-backend/storage/pdf/Item_PDF_(12).pdf')}>  {/* Pass audit.path as argument */}
               <FaEye />

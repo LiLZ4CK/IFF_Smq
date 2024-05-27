@@ -6,8 +6,12 @@ import RegisterForm from './Components/RegisterForm/RegisterForm';
 import DashboardForm from './Components/DashboardForm/DashboardForm';
 import VerificationForm from './Components/VerificationForm/VerificationForm';
 import ListDaudit from './Components/Audits/ListDaudit';
+import NewAudit from './Components/Audits/NewAudit';
 import ListDaction from './Components/Actions/ListDaction';
+import PilotageProc from './Components/PilotageProc/PilotageProc';
+import Notif from './Components/Notification/Notif';
 import NouvNC from './Components/NC/NouvNC';
+import GestRisques from './Components/GestRisques/GestRisques';
 import NewAction from './Components/Actions/NewAction';
 import Cartographie from './Components/Cartographie/Cartographie';
 import GED from './Components/GED/GED';
@@ -16,7 +20,6 @@ import Boraq from '../src/Components/Assets/boraq.png';
 import Afaq from '../src/Components/Assets/afaq.png';
 import './App.css';
 import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { IoSettingsSharp, IoLogOutOutline, IoNotifications } from 'react-icons/io5';
 import { HiQuestionMarkCircle } from "react-icons/hi";
@@ -36,15 +39,27 @@ loadCldr(
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(true); // Add loading state
-  const [isOpen, setIsOpen] = useState(false);
+  const [settisOpen, setIsOpen] = useState(false);
+  const [notifisOpen, notIsOpen] = useState(false);
   const [name, setName] = useState('');
 
 
   const toggleSettings  = () => {
-    setIsOpen(!isOpen);
+    if (notifisOpen) {
+      notIsOpen(false); // Close settings if it's open
+    }
+    setIsOpen(!settisOpen);
+  };
+
+  const toggleNotif = () => {
+    if (settisOpen) {
+      setIsOpen(false); // Close settings if it's open
+    }
+    notIsOpen(!notifisOpen); // Toggle notification
   };
   useEffect(() => {
     // Check if user is already logged in
+    //Notif();
     const checkerr = async () => {
 
       const loggedInStatus = localStorage.getItem('isLoggedIn');
@@ -71,7 +86,7 @@ function App() {
     }
     setIsLoading(false); // Set loading to false after checks
   }
-    checkerr();
+  checkerr();
   }, []);
 
 
@@ -96,23 +111,18 @@ function App() {
           {isLoggedIn && (
         <Navbar>
             <Container className='Navbar'>
-              <Navbar.Brand href="/">QualIFF</Navbar.Brand>
+              <Navbar.Brand className="quali" href="/">QualIFF</Navbar.Brand>
               <div className="Name">{name}</div>
               <button className="info"><HiQuestionMarkCircle className="icon" /></button>
-              <button className="notif"><IoNotifications  className="icon" /></button>
+              <button className="notifo" onClick={toggleNotif}><IoNotifications className="icon" /></button>
+                {notifisOpen && <Notif />}
               <button className="sett" onClick={toggleSettings}>
         <IoSettingsSharp className="icon" />
-            </button>
-                {isOpen && (
+              </button>
+                {settisOpen && (
                   <ul className="settings-list">
                     <li>
                       <a href="/dashboard">Account Settings</a>
-                    </li>
-                    <li>
-                      <a href="/dashboard">Privacy Settings</a>
-                    </li>
-                    <li>
-                      <a href="/dashboard">Notifications</a>
                     </li>
                     <li className="logout-option">
                       <a href="/dashboard" onClick={() => {
@@ -159,8 +169,20 @@ function App() {
                   element={isLoggedIn ? <ListDaudit /> : <Navigate to="/" />}
                 />
                 <Route
+                  path="/Nouvel_Audit"
+                  element={isLoggedIn ? <NewAudit /> : <Navigate to="/" />}
+                />
+                <Route
                   path="/Planning_des_audits"
                   element={isLoggedIn ? <PlanningDauit /> : <Navigate to="/" />}
+                />
+                <Route
+                  path="/Pilotage_du_processus"
+                  element={isLoggedIn ? <PilotageProc /> : <Navigate to="/" />}
+                />
+                <Route
+                  path="/Gestion_des_risques"
+                  element={isLoggedIn ? <GestRisques /> : <Navigate to="/" />}
                 />
                 <Route
                   path="/Cartographie_des_processus"

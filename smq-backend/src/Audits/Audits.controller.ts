@@ -24,6 +24,8 @@ export class AuditsController{
                 return res.status(HttpStatus.OK).send({audits});
             }
 
+            
+
             @Post('/newAudit')
             async createNew(@Res() res: Response, 
             @Body('User') uname: string,
@@ -43,7 +45,6 @@ export class AuditsController{
                   code: newCode,
                   responsableId: userr.id,
                   processus: procs,
-                  description: desc,
                   lieu: 'IFF',}} )
                   return res.status(HttpStatus.OK).send('okk')
                 }

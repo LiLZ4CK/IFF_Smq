@@ -1,0 +1,37 @@
+.Pilot .backP {
+    position: absolute; /* Ensures background stays fixed across pages */
+    left: 60px;
+    top: 220px;
+    height: 200px;
+    width: 1800px;
+    height: 950px;
+    margin-bottom: 40px;
+    background-color: rgb(92, 20, 68); /* Your desired background color */
+  }
+.Pilot .title{
+    position: absolute;
+    font-size: 30px;
+    left: 7%;
+    top: 28%;
+    color: aliceblue;
+}
+.Pilot .procelect {
+    position: absolute;
+    left: 37%;
+    top: 38%;
+    display: flex;
+    align-items: center; 
+    gap: 10px; 
+}
+
+.Pilot .procelect label{
+    font-size: 20px;
+    color: azure;
+}
+.process-details{
+    position: absolute;
+    left: 7%;
+    top: 54%;
+    font-size: 20px;
+    color: aliceblue;
+}

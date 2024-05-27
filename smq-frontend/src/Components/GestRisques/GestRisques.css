@@ -1,0 +1,102 @@
+.risques-list {
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+    font-size: 20px;
+    padding: 30px;
+    height: 600px;
+    top: 70px;
+    left: 13px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 160px;
+    overflow-y: scroll;
+  }
+  
+  .filter {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding-top: 50px;
+    grid-gap: 5px;
+  }
+  
+  .filter input {
+    padding: 5px;
+    height: 50px;
+    width: 500px;
+    border: 1px solid #ccc;
+    margin-right: 5px;
+    flex-grow: 1;
+  }
+  
+  .filter button {
+    position: absolute;
+    left: 37%;
+    padding: 5px 10px;
+    height: 40px;
+    width: 100px;
+    background-color: rgb(200, 28, 44);
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .risque-header {
+    display: flex;
+    background-color: #f2f2f2;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  
+  .risque-header p {
+    margin: 0;
+    padding: 5px;
+    border: 1px solid #ddd;
+    text-align: center;
+    width: 36.66%; 
+    overflow: hidden;
+    width: 250px;
+    background-color: #7c7676;
+  }
+  
+  .risque {
+    display: flex;
+  }
+  
+  .risque p {
+    margin: 0;
+    padding: 5px;
+    border: 1px solid #ddd;
+    text-align: center;
+    overflow: visible;
+    width: 250px;
+    background-color: #ffffff;
+    word-wrap: break-word; /* Ensure text wraps within the container */
+  }
+  
+  .maitrise-indicator {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Initial shadow for all indicators */
+  }
+  
+  .maitrise-indicator.green {
+    background-color: green;
+    box-shadow: 0 0 10px green;
+  }
+  
+  .maitrise-indicator.red {
+    background-color: red;
+    box-shadow: 0 0 10px red;
+  }
+  
+  .maitrise-indicator.yellow {
+    background-color: yellow;
+    box-shadow: 0 0 10px yellow;
+  }
+  

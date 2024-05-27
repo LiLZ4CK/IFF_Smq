@@ -23,7 +23,7 @@ export class NavController{
                     if (!user){
                         return res.status(HttpStatus.NOT_FOUND).send('User not found')
                     }
-                    const rol = await this.prisma.role.findFirst({where:{id: user.roleId}})
+                    const rol = await this.prisma.role.findUnique({where:{name: user.roleName}})
                     if (!rol){
                         return res.status(HttpStatus.INTERNAL_SERVER_ERROR).send('try reconnect')
                     }

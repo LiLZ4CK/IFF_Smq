@@ -1,0 +1,24 @@
+.Notifc {
+    position: absolute; /* Position relative to the container */
+    top: 60px; /* Initially positioned below the icon */
+    right: -110px; /* Positioned to the right of the icon */
+    transform: translateX(-50%); /* Center horizontally */
+    z-index: 999; /* High z-index to stay on top */
+    width: 250px;
+    height: 200px;
+    /* Other styles for appearance (background, border, etc.) */
+  }
+  .NoNotif{
+    color: aliceblue;
+    font-size: 20px; /* Added "px" unit */
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove default padding */
+  }
+
+  .list {
+    color: rgb(0, 0, 0);
+    font-size: 20px; /* Added "px" unit */
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove default padding */
+  }
+  

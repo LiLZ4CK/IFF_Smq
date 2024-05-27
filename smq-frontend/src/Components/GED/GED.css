@@ -1,6 +1,30 @@
 .chonky {
     position: relative;
-    top: 40px;
+    right: 360px;
+    top: 100px;
     height: 500px; /* Include the height and width for completeness */
-    width: 1600px;
+    width: 1000px;
+  }
+  .test{
+    position: absolute;
+  }
+  .backdocv{
+      position: absolute; /* Ensures background stays fixed across pages */
+      left: 60px;
+      top: 170px;
+      height: 200px;
+      width: 1800px;
+      height: 950px;
+      border-radius: 30px;
+      background-color: rgb(92, 20, 68); /* Your desired background color */
+      z-index: -1; /* Place behind content to avoid interference */
+  }
+  
+
+  .docv{
+    position: absolute;
+    top: 250px;
+    left: 1190px;
+    width: 595px;
+    height: 842px;
   }

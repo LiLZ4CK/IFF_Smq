@@ -100,14 +100,3 @@
 .icon:focus {
   outline: none;
 }
-
-@media (max-width: 768px) {
-  
-  .app {
-    position: relative;
-    background-color: rgb(92, 20, 68);
-    top: 550px;
-    left: 500px;
-    padding: 50px 250px; /* Adjust as needed */
-  }
-}

@@ -6,10 +6,11 @@
 .global-background {
   position: absolute; /* Ensures background stays fixed across pages */
   left: 60px;
-  top: 220px;
+  top: 170px;
   height: 200px;
   width: 1800px;
-  height: 600px;
+  height: 660px;
+  border-radius: 30px;
   background-color: rgb(92, 20, 68); /* Your desired background color */
   z-index: -1; /* Place behind content to avoid interference */
 }
@@ -38,7 +39,7 @@
   position: relative;;
   font-size: 25px;
 }
-.notif{
+.notifo{
   position: absolute;
   background-color: transparent;
   width: 30px;
@@ -46,9 +47,14 @@
   top: -10px;
 
 }
-.notif .icon{
+.notifo .icon{
   position: relative;;
   font-size: 25px;
+}
+.quali{
+  position: relative;
+  top: 10px;
+  left: 20px;
 }
 
 .Name{
@@ -78,6 +84,7 @@ left: 60px;
 padding-left: 20px;
 padding-right: 20px;
 padding-top: -30px;
+border-radius: 120px;
 background-color: rgb(102, 83, 96);
 height: 70px;
 width: 1800px;

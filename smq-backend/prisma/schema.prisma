@@ -18,7 +18,7 @@ model User {
   name                    String  @unique
   email                   String  @unique
   password                String
-  roleId                  Int?
+  roleName                String?
   isvirified              Boolean @default(false)
   VerificationCode        String  @default("0")
 
@@ -42,7 +42,6 @@ model Audit {
   code               String
   responsableId      Int
   processus          String
-  description        String
   lieu               String
   status             Int      @default(0)
   path               String?
@@ -64,5 +63,27 @@ model Action {
   cout               Int
 }
 
+model Processus {
+  id                  Int       @id @default(autoincrement())
+  name                String
+  type                String
+  responsableId       Int
+  element             String
+  pilot               String
+  finalite            String
+  indicateurEobject   String
+}
+
+model Risque {
+  id                  Int       @id @default(autoincrement())
+  processusId         Int
+  processusname       String
+  type                String
+  libelle             String
+  categorie           String
+  description         String
+  consequence         String
+  maitrise            String
+}
 
 //npx ts-node seed.ts   
