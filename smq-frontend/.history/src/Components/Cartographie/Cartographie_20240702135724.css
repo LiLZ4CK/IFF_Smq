@@ -1,0 +1,181 @@
+.Cartographie .back {
+    position: absolute;
+    left: 60px;
+    top: 220px;
+    width: 1800px;
+    height: 690px;
+    background-color: rgb(92, 20, 68);
+    z-index: -1;
+}
+
+.Cartographie .Management h2 {
+    position: absolute;
+    top: 240px;
+    left: 150px;
+    color: black;
+}
+
+.Cartographie .Management .buttons {
+    position: absolute;
+    top: 240px;
+    left: 110px;
+    display: inline-block;
+    padding-top: 20px;
+    width: 1705px;
+    height: 150px;
+    text-align: center;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    border: 1px solid #bdbcb5;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.Cartographie .Management .buttons .button {
+    padding-bottom: 90px;
+    font-size: 19px;
+    width: 350px;
+    height: 100px;
+    margin-left: 70px;
+    margin-right: 70px;
+    color: black;
+    background-color: #b3adad;
+    text-align: center;
+    display: inline-block;
+    line-height: 100px; /* Centering text vertically */
+}
+
+.Cartographie .Management .buttons .button:hover {
+    background-color: #fae363;
+    color: rgb(255, 255, 255);
+}
+
+.Cartographie .BesoinClient .button {
+    position: absolute;
+    top: 395px;
+    left: 90px;
+    height: 290px;
+    width: 200px;
+    color: black;
+    font-size: 19px;
+    padding-bottom: 150px;
+    background-color: #7a7a7a;
+    flex: 1;
+    display: inline-block;
+    text-decoration: none;
+    border: 10px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 290px; /* Centering text vertically */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.Cartographie .SatisfactionClient .button {
+    position: absolute;
+    top: 395px;
+    right: 90px;
+    height: 290px;
+    width: 200px;
+    color: black;
+    font-size: 19px;
+    padding-bottom: 150px;
+    background-color: #b3adad;
+    flex: 1;
+    display: inline-block;
+    text-decoration: none;
+    border: 10px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 290px; /* Centering text vertically */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.Cartographie .SatisfactionClient .button:hover, .BesoinClient .button:hover {
+    background-color: #27691e;
+    color: rgb(255, 255, 255);
+}
+
+.Cartographie .Realisation h2 {
+    position: absolute;
+    top: 410px;
+    left: 350px;
+    color: black;
+}
+
+.Cartographie .Realisation .buttons {
+    display: flex;
+    position: absolute;
+    top: 395px;
+    left: 320px;
+    display: inline-block;
+    padding-top: 50px;
+    width: 1280px;
+    height: 290px;
+    text-align: center;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    border: 1px solid #666;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.Cartographie .Realisation .buttons .button {
+    width: 390px;
+    padding-bottom: 90px;
+    font-size: 19px;
+    height: 180px;
+    color: black;
+    background-color: #b3adad;
+    text-align: center;
+    display: inline-block;
+    line-height: 180px; /* Centering text vertically */
+}
+
+.Cartographie .Realisation .buttons .button:hover {
+    background-color: #571e69;
+    color: rgb(255, 255, 255);
+}
+
+.Cartographie .Support h2 {
+    position: absolute;
+    top: 690px;
+    left: 150px;
+    color: black;
+}
+
+.Cartographie .Support .buttons {
+    display: flex;
+    flex: 1 0 auto;
+    position: absolute;
+    top: 690px;
+    left: 110px;
+    display: inline-block;
+    padding-top: 20px;
+    width: 1705px;
+    height: 160px;
+    text-align: center;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    border: 1px solid #666;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.Cartographie .Support .buttons .button {
+    width: 350px;
+    padding-bottom: 90px;
+    font-size: 20px;
+    height: 100px;
+    background-color: #b3adad;
+    color: black;
+    text-align: center;
+    display: inline-block;
+    line-height: 100px; /* Centering text vertically */
+}
+
+.Cartographie .Support .buttons .button:hover {
+    background-color: #2e2bca;
+    color: rgb(255, 255, 255);
+}

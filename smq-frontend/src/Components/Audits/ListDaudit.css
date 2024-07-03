@@ -3,14 +3,33 @@
   position: relative;
   flex-direction: column;
   font-size: 20px;
-  top: 70px;
+  top: 77px;
   left: 13px;
-  background-color: rgb(92, 20, 68);
+  background-color: transparent;
   padding-left: 30px;
   padding-right: 30px;
   padding-bottom: 160px;
   height: 600px;
   overflow-y: scroll;
+}
+
+.newAudit {
+  position: absolute;
+  left: 87%;
+  top: 6%;
+  padding: 5px 10px;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+
+  height: 40px;
+  width: 160px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
 }
 
 .filter {

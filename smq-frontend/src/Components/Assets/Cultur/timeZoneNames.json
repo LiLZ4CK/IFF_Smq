@@ -11,7 +11,7 @@
       "dates": {
         "timeZoneNames": {
           "hourFormat": "+HH:mm;−HH:mm",
-          "gmtFormat": "UTC{0}",
+          "gmtFormat": "UTC{1}",
           "gmtZeroFormat": "UTC",
           "regionFormat": "heure : {0}",
           "regionFormat-type-daylight": "{0} (heure d’été)",

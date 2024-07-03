@@ -8,9 +8,12 @@ import VerificationForm from './Components/VerificationForm/VerificationForm';
 import ListDaudit from './Components/Audits/ListDaudit';
 import NewAudit from './Components/Audits/NewAudit';
 import ListDaction from './Components/Actions/ListDaction';
+import XXX from './Components/XXX/XXX';
 import PilotageProc from './Components/PilotageProc/PilotageProc';
+import AddFichier from './Components/PilotageProc/AddFichier';
 import Notif from './Components/Notification/Notif';
 import NouvNC from './Components/NC/NouvNC';
+import ListNoconf from './Components/NC/NCList';
 import GestRisques from './Components/GestRisques/GestRisques';
 import NewAction from './Components/Actions/NewAction';
 import Cartographie from './Components/Cartographie/Cartographie';
@@ -181,6 +184,10 @@ function App() {
                   element={isLoggedIn ? <PilotageProc /> : <Navigate to="/" />}
                 />
                 <Route
+                  path="/Add_Ficher"
+                  element={isLoggedIn ? <AddFichier /> : <Navigate to="/" />}
+                />
+                <Route
                   path="/Gestion_des_risques"
                   element={isLoggedIn ? <GestRisques /> : <Navigate to="/" />}
                 />
@@ -190,6 +197,7 @@ function App() {
                 />
                 <Route path="/GED" element={isLoggedIn ? <GED /> : <Navigate to="/" />} />
                 <Route path="/Nouvelle_NC" element={isLoggedIn ? <NouvNC /> : <Navigate to="/" />} />
+                <Route path="/List_des_NC" element={isLoggedIn ? <ListNoconf /> : <Navigate to="/" />} />
                 <Route path="/newAction" element={isLoggedIn ? <NewAction /> : <Navigate to="/" />} />
               </>
             )}

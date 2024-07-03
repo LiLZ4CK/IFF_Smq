@@ -32,9 +32,9 @@ export class NotifController {
             const audits = await this.prisma.audit.findMany({where:{status: 0},orderBy:{planningDate: 'asc'}})
             const today = moment();
             const soonAudits: any[] = [];
-            for (let i = 0; audits[i]; i++){
+            for (let i = 0; i < audits.length; i++) {
                 const daysDifference = Math.abs(today.diff(audits[i].planningDate, 'days'));
-                if(daysDifference > 0 && daysDifference < 5){
+                if (daysDifference >= 0 && daysDifference < 7) {  
                     soonAudits.push(audits[i]);
             }
         }  

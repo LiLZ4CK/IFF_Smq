@@ -39,7 +39,6 @@
   display: flex;
   justify-content: center; /* Center-align the .nav-tables */
   flex-wrap: wrap; /* Allow wrapping of .nav-table elements */
-  max-width: 1200px; /* Adjust as needed */
 }
 
 

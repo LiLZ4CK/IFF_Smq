@@ -24,6 +24,15 @@ export class ProcController{
                 return res.status(HttpStatus.OK).send({procs});
             }
 
+            @Post('/descri')
+            async getdesc(@Res() res: Response, @Body('descri') descri: number){
+                const desc = await this.prisma.pdescription.findUnique({where:{processusId: descri}})
+                if (desc)
+                {
+                    console.log('yessss');
+                }
+                return res.status(HttpStatus.OK).send({desc});
+            }
             
 
             @Post('/newproc')
@@ -40,7 +49,7 @@ export class ProcController{
                   name: 'name '+count,
                   type: 'type '+count,
                   responsableId: 1,
-                  element: 'element '+count,
+                  element: 'element '+ count,
                   pilot: 'pilot '+count,
                   finalite:'finalite '+count,
                   indicateurEobject: 'indc '+count,}} )

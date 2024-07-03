@@ -1,0 +1,110 @@
+.Pilot {
+  padding: 20px;
+  padding-top: 170px; /* Add padding to account for the top position of .backP */
+  position: relative; /* Needed for absolute positioning of .backP */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.backP {
+  position: absolute;
+  width: 1850px;
+  top: 0px; /* Adjust top to 0 to align with the padding in .Pilot */
+   /* Adjust width based on container */
+  min-height: 950px; /* Minimum height to ensure initial size */
+  border-radius: 30px;
+  background-color: rgb(92, 20, 68); /* Your desired background color */
+  z-index: -1; /* Place behind content to avoid interference */
+  transition: min-height 0.3s; /* Smooth transition for height changes */
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.procelect {
+  margin-bottom: 20px;
+}
+
+.process-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Reduced space between fields */
+  width: 100%;
+}
+
+.msurvielle, .mhumains, .dentree, .aprocessus, .dsortie, .responsable, .iobjectifs, .dassocies {
+  position: relative;
+  flex: 1 1 30%; /* Adjust width of each section */
+  min-width: 100px; /* Ensure minimum width */
+  border: 1px solid #ccc; /* Optional: add border */
+  padding: 1px; /* Reduced padding */
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1); /* Optional: add shadow */
+  margin: 1px 0; /* Reduced space between rows */
+  font-size: 14px; /* Smaller font size */
+  background-color: aliceblue;
+}
+
+.process-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 3px 0; /* Reduced space between items */
+  font-size: 12px; /* Smaller font size */
+}
+
+.process-item span {
+  font-size: 12px; /* Smaller font size */
+  padding: 1px 3px; /* Reduced padding */
+}
+
+.process-item button {
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 2px 6px; /* Smaller padding */
+  border-radius: 3px; /* Smaller border radius */
+  font-size: 12px; /* Smaller font size */
+}
+
+.process-item button:hover {
+  background-color: #0056b3;
+}
+
+/* Specific styles for the "X" button */
+.process-item button {
+  width: auto; /* Ensure the width is auto */
+  padding: 2px 4px; /* Adjust padding for smaller size */
+}
+
+.process-add-item {
+  display: flex;
+  align-items: center;
+  margin-top: 5px; /* Reduced space above add item section */
+  font-size: 12px; /* Smaller font size */
+}
+
+.process-add-item input {
+  flex: 1;
+  width: 100px; /* Set a smaller width */
+  margin-right: 5px; /* Reduced space between input and button */
+  padding: 3px; /* Smaller padding */
+  font-size: 12px; /* Smaller font size */
+}
+
+.process-add-item button {
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 2px 6px; /* Smaller padding */
+  border-radius: 3px; /* Smaller border radius */
+  font-size: 12px; /* Smaller font size */
+}
+
+.process-add-item button:hover {
+  background-color: #0056b3;
+}

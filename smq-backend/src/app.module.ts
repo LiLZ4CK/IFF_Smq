@@ -18,13 +18,15 @@ import { NotifModule } from './Notification/Notif.module';
 import { ScheduleModule } from '@nestjs/schedule';
 import { RisqueModule } from './Risques/Risque.module'
 import { ProcModule } from './Processus/Proc.module'
+import { NocModule } from './NC/Noc.module'
+import {FichierModule } from './Fichier/Fichier.Module'
 
 @Module({
   imports: [
     ScheduleModule.forRoot(),PrismaModule, AuthuserModule,
     SettingsModule, NavModule, AdminModule, AuditsModule,
     GEDModule, ActionsModule,NotifModule, ProcModule,
-    RisqueModule],
+    RisqueModule, NocModule, FichierModule],
   controllers: [AppController],
   providers: [AppService, PrismaService],
 })

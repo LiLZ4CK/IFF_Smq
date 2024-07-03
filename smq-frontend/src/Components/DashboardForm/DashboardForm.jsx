@@ -6,6 +6,7 @@ const Sublinks = [
   { label: 'Actions', link1: 'Liste des Actions', link2: 'Plan d\'actions', link3: 'Indicateur actions' },
   { label: 'Audits',  link1: 'Liste des audits', link2: 'Planning des audits' },
   { label: 'GED', link1: 'GED', link2: 'Acces au documents' },
+  { label: 'Indicateur', link1: 'TBD', link2: 'Indicateur de performance' },
 ];
 
 const rep = (text) => text.replace(/\s+/g, '_');

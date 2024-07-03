@@ -1,17 +1,31 @@
 .ncForm {
     position: absolute;
-    top: 20%;
-    left: 14%;
+    top: 28%;
+    left: 12%;
     background-color: #fff;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     padding: 10px 20px;
     transition: transform 0.2s;
     width: 1500px;
-    height: 700px;
+    height: 1540px;
     text-align: center;
     margin: auto;
     margin-top: 20px;
+}
+.ncForm .backnc {
+    position: absolute; /* Ensures background stays fixed across pages */
+    left: -11.2%;
+    height: 200px;
+    width: 1800px;
+    height: 1400px;
+    border-radius: 30px;
+    background-color: rgb(92, 20, 68); /* Your desired background color */
+    z-index: -1; /* Place behind content to avoid interference */
+}
+
+.ncForm h1{
+    font-size: 35px;
 }
 
 .ncForm label {

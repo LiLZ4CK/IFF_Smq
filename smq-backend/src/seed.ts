@@ -23,7 +23,7 @@ async function main() {
 
   await prisma.user.create({
     data:{
-        name: process.env.ADMIN,
+        name: process.env.NAME,
         password: await bcrypt.hash(process.env.PASS, 10),
         email: process.env.ADMIN,
         isvirified: true,

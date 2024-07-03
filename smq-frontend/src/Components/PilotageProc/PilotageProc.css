@@ -1,37 +1,141 @@
-.Pilot .backP {
+.PilotageProc {
+    font-family: Arial, sans-serif;
+  }
+
+  .piloback {
     position: absolute; /* Ensures background stays fixed across pages */
-    left: 60px;
-    top: 220px;
+    left: -2.6%;
+    top: 10%;
     height: 200px;
     width: 1800px;
     height: 950px;
-    margin-bottom: 40px;
     background-color: rgb(92, 20, 68); /* Your desired background color */
+    z-index: -1;
   }
-.Pilot .title{
+  
+  
+  .PilotageProc .search-container {
     position: absolute;
-    font-size: 30px;
-    left: 7%;
-    top: 28%;
-    color: aliceblue;
-}
-.Pilot .procelect {
+    left: 5%;
+    top: 27%;
+    width: 22%;
+    margin: 20px;
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  .PilotageProc .search-container input {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .PilotageProc .files-container {
     position: absolute;
-    left: 37%;
-    top: 38%;
+    left: 4%;
+    top: 34%;
+    width: 19%;
+    margin: 20px;
+  }
+  
+  .PilotageProc .group-container {
+    margin-bottom: 10px;
+  }
+  
+  .PilotageProc .group-header {
     display: flex;
-    align-items: center; 
-    gap: 10px; 
-}
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+  }
+  
+  .PilotageProc .group-header span {
+    margin-left: 10px;
+  }
+  
+  .PilotageProc .group-header:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .PilotageProc ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .PilotageProc ul li {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-top: none;
+    background-color: white;
+  }
+  
+  .PilotageProc ul li a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .PilotageProc ul li a:hover {
+    text-decoration: underline;
+  }
 
-.Pilot .procelect label{
-    font-size: 20px;
-    color: azure;
-}
-.process-details{
+  .piloback {
+    position: absolute; /* Ensures background stays fixed across pages */
+    left: 3.17%;
+    top: 30%;
+    height: 200px;
+    width: 1800px;
+    height: 950px;
+    background-color: rgb(92, 20, 68); /* Your desired background color */
+    z-index: -1;
+  }
+  
+  
+  .file-details {
     position: absolute;
-    left: 7%;
-    top: 54%;
-    font-size: 20px;
-    color: aliceblue;
-}
+    left: 68%;
+    top: 28%;
+    height: 80%;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    width: 28%;
+    background-color: azure;
+  }
+  
+  .file-details h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  
+  .info-row {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Ensure items are centered */
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis to overflow text */
+  }
+  
+  .info-row label {
+    font-weight: bold;
+    margin-right: 10px; /* Add some space between the label and the value */
+    direction: ltr; /* Ensure label text remains left-to-right */
+    white-space: nowrap; /* Prevent label text from wrapping */
+  }
+  
+  .pdf-containerp {
+    position: absolute;
+    margin-top: 20px;
+    left: 25%;
+    top: 26%;
+    width: 60%;
+    height: 65%;
+  }

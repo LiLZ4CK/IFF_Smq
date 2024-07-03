@@ -13,7 +13,7 @@ import * as moment from 'moment';
 
 @Controller('/Actions')
 export class ActionsController{
-	constructor(private readonly adminService: ActionsService,
+	constructor(private readonly actionsService: ActionsService,
 				private prisma: PrismaService,
                 private jwtService: JwtService) {}
 

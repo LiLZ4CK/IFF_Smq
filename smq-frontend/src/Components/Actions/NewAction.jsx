@@ -8,6 +8,7 @@ const NewAction = () => {
     const [Priorite, setPriorite] = useState("");
     const [Echeance, setEcheance] = useState("");
     const [Couts, setCouts] = useState("");
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         
@@ -19,8 +20,7 @@ const NewAction = () => {
             Echeance,
             Couts
         );
-        // Add your form submission logic here
-
+        
         try{
             console.log('lets create!')
             const token = localStorage.getItem('token');

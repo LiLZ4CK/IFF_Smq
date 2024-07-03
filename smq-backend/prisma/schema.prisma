@@ -24,6 +24,22 @@ model User {
 
 }
 
+model fichier {
+  id                      Int     @id @unique @default(autoincrement())
+  path                    String
+  name                    String
+  group                   String
+  redacteur               String
+  dateCreation            DateTime @default(now())
+  typeDoc                 String
+  processus               String
+  natureDoc               String?
+  produit                 String?
+  service                 String?
+  compleme                String?
+  commentaire             String?
+}
+
 model Role {
   id                      Int          @id @default(autoincrement())
   name                    String       @unique
@@ -51,6 +67,20 @@ model Audit {
   realisationDate    DateTime?
 }
 
+
+model Nconform {
+  id                 Int        @id @default(autoincrement())
+  responsables       String[]
+  processus          String
+  constats           String
+  origine            String
+  constatdate        DateTime
+  acorrective        String
+  refqualite         String
+  type               String
+  aimmediates        String[]
+}
+
 model Action {
   id                 Int        @id @default(autoincrement())
   responsableId      Int
@@ -65,6 +95,7 @@ model Action {
 
 model Processus {
   id                  Int       @id @default(autoincrement())
+  pdescriptionId      Int?      @unique
   name                String
   type                String
   responsableId       Int
@@ -72,6 +103,20 @@ model Processus {
   pilot               String
   finalite            String
   indicateurEobject   String
+}
+
+model Pdescription{
+  id                  Int       @id @default(autoincrement())
+  processusId         Int       @unique
+  msurvielle          String[]
+  mhumains            String[]
+  dentree             String[]
+  aprocessus          String[]
+  dsortie             String[]
+  responsable         String[]
+  iobjectifs          String[]
+  dassocies           String[]
+
 }
 
 model Risque {

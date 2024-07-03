@@ -1,20 +1,244 @@
 {
-  "functions": {
-    "source": "functions"
-  },
-  "firestore": {
-    "rules": "firestore.rules",
-    "indexes": "firestore.indexes.json"
-  },
-  "storage": {
-    "rules": "storage.rules"
-  },
-  "hosting": {
-    "public": "public",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ]
-  }
+  files: [
+    {
+      id: '000-Tableau des objectifs SMQ',
+      name: '000-Tableau des objectifs SMQ',
+      ext: undefined,
+      isDir: true,
+      isHidden: false,
+      isSymlink: false,
+      openable: true,
+      selectable: true,
+      size: 0,
+      modDate: 2024-06-10T10:41:51.808Z,
+      childrenIds: [Array]
+    },
+    {
+      id: '1-FIP',
+      name: '1-FIP',
+      ext: undefined,
+      isDir: true,
+      isHidden: false,
+      isSymlink: false,
+      openable: true,
+      selectable: true,
+      size: 0,
+      modDate: 2024-06-10T10:41:51.817Z,
+      childrenIds: [Array]
+    },
+    {
+      id: '2-FDC et PC IFF',
+      name: '2-FDC et PC IFF',
+      ext: undefined,
+      isDir: true,
+      isHidden: false,
+      isSymlink: false,
+      openable: true,
+      selectable: true,
+      size: 0,
+      modDate: 2024-06-10T10:41:51.883Z,
+      childrenIds: [Array]
+    },
+    {
+      id: '3-Donnée personelle',
+      name: '3-Donnée personelle',
+      ext: undefined,
+      isDir: true,
+      isHidden: false,
+      isSymlink: false,
+      openable: true,
+      selectable: true,
+      size: 0,
+      modDate: 2024-06-10T10:41:51.904Z,
+      childrenIds: [Array]
+    },
+    {
+      id: "4-L'organigramme",
+      name: "4-L'organigramme",
+      ext: undefined,
+      isDir: true,
+      isHidden: false,
+      isSymlink: false,
+      openable: true,
+      selectable: true,
+      size: 0,
+      modDate: 2024-06-10T10:41:51.907Z,
+      childrenIds: [Array]
+    },
+    {
+      id: '5-Politique IFF & Chart RSE',
+      name: '5-Politique IFF & Chart RSE',
+      ext: undefined,
+      isDir: true,
+      isHidden: false,
+      isSymlink: false,
+      openable: true,
+      selectable: true,
+      size: 0,
+      modDate: 2024-06-10T10:41:51.915Z,
+      childrenIds: [Array]
+    },
+    {
+      id: '6-TBD',
+      name: '6-TBD',
+      ext: undefined,
+      isDir: true,
+      isHidden: false,
+      isSymlink: false,
+      openable: true,
+      selectable: true,
+      size: 0,
+      modDate: 2024-06-12T12:23:32.463Z,
+      childrenIds: [Array]
+    },
+    {
+      id: '7-Analyse des risque et OPP',
+      name: '7-Analyse des risque et OPP',
+      ext: undefined,
+      isDir: true,
+      isHidden: false,
+      isSymlink: false,
+      openable: true,
+      selectable: true,
+      size: 0,
+      modDate: 2024-06-10T10:41:51.922Z,
+      childrenIds: [Array]
+    },
+    {
+      id: "8-Journal d'amélioration",
+      name: "8-Journal d'amélioration",
+      ext: undefined,
+      isDir: true,
+      isHidden: false,
+      isSymlink: false,
+      openable: true,
+      selectable: true,
+      size: 0,
+      modDate: 2024-06-10T10:41:51.927Z,
+      childrenIds: [Array]
+    }
+  ],
+  folderChain: [ { id: '', name: '' } ]
+}
+{
+  files: [
+    {
+      id: '000-Tableau des objectifs SMQ',
+      name: '000-Tableau des objectifs SMQ',
+      ext: undefined,
+      isDir: true,
+      isHidden: false,
+      isSymlink: false,
+      openable: true,
+      selectable: true,
+      size: 0,
+      modDate: 2024-06-10T10:41:51.808Z,
+      childrenIds: [Array]
+    },
+    {
+      id: '1-FIP',
+      name: '1-FIP',
+      ext: undefined,
+      isDir: true,
+      isHidden: false,
+      isSymlink: false,
+      openable: true,
+      selectable: true,
+      size: 0,
+      modDate: 2024-06-10T10:41:51.817Z,
+      childrenIds: [Array]
+    },
+    {
+      id: '2-FDC et PC IFF',
+      name: '2-FDC et PC IFF',
+      ext: undefined,
+      isDir: true,
+      isHidden: false,
+      isSymlink: false,
+      openable: true,
+      selectable: true,
+      size: 0,
+      modDate: 2024-06-10T10:41:51.883Z,
+      childrenIds: [Array]
+    },
+    {
+      id: '3-Donnée personelle',
+      name: '3-Donnée personelle',
+      ext: undefined,
+      isDir: true,
+      isHidden: false,
+      isSymlink: false,
+      openable: true,
+      selectable: true,
+      size: 0,
+      modDate: 2024-06-10T10:41:51.904Z,
+      childrenIds: [Array]
+    },
+    {
+      id: "4-L'organigramme",
+      name: "4-L'organigramme",
+      ext: undefined,
+      isDir: true,
+      isHidden: false,
+      isSymlink: false,
+      openable: true,
+      selectable: true,
+      size: 0,
+      modDate: 2024-06-10T10:41:51.907Z,
+      childrenIds: [Array]
+    },
+    {
+      id: '5-Politique IFF & Chart RSE',
+      name: '5-Politique IFF & Chart RSE',
+      ext: undefined,
+      isDir: true,
+      isHidden: false,
+      isSymlink: false,
+      openable: true,
+      selectable: true,
+      size: 0,
+      modDate: 2024-06-10T10:41:51.915Z,
+      childrenIds: [Array]
+    },
+    {
+      id: '6-TBD',
+      name: '6-TBD',
+      ext: undefined,
+      isDir: true,
+      isHidden: false,
+      isSymlink: false,
+      openable: true,
+      selectable: true,
+      size: 0,
+      modDate: 2024-06-12T12:23:32.463Z,
+      childrenIds: [Array]
+    },
+    {
+      id: '7-Analyse des risque et OPP',
+      name: '7-Analyse des risque et OPP',
+      ext: undefined,
+      isDir: true,
+      isHidden: false,
+      isSymlink: false,
+      openable: true,
+      selectable: true,
+      size: 0,
+      modDate: 2024-06-10T10:41:51.922Z,
+      childrenIds: [Array]
+    },
+    {
+      id: "8-Journal d'amélioration",
+      name: "8-Journal d'amélioration",
+      ext: undefined,
+      isDir: true,
+      isHidden: false,
+      isSymlink: false,
+      openable: true,
+      selectable: true,
+      size: 0,
+      modDate: 2024-06-10T10:41:51.927Z,
+      childrenIds: [Array]
+    }
+  ],
+  folderChain: [ { id: '', name: '' } ]
 }
