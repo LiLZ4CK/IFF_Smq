@@ -1,0 +1,209 @@
+@import "../../../node_modules/@syncfusion/ej2-base/styles/material.css";
+@import "../../../node_modules/@syncfusion/ej2-buttons/styles/material.css";
+@import "../../../node_modules/@syncfusion/ej2-calendars/styles/material.css";
+@import "../../../node_modules/@syncfusion/ej2-dropdowns/styles/material.css";
+@import "../../../node_modules/@syncfusion/ej2-inputs/styles/material.css";
+@import "../../../node_modules/@syncfusion/ej2-lists/styles/material.css";
+@import "../../../node_modules/@syncfusion/ej2-navigations/styles/material.css";
+@import "../../../node_modules/@syncfusion/ej2-popups/styles/material.css";
+@import "../../../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css";
+@import "../../../node_modules/@syncfusion/ej2-react-schedule/styles/material.css";
+
+.e-schedule .e-schedule-toolbar .e-toolbar-items.e-tbar-pos,
+.e-schedule .e-timeline-month-view .e-header-month-cell,
+.e-schedule .e-timeline-month-view .e-header-week-cell,
+.e-schedule .e-timeline-month-view .e-header-cells,
+.e-schedule .e-timeline-month-view .e-work-cells  {
+    background-color: #313135 !important;
+    color: #FFF !important;
+    border-color: #3B3B3F !important;
+}
+
+.e-schedule,
+.e-schedule .e-resource-left-td,
+.e-schedule .e-resource-cells,
+.e-schedule .e-toolbar .e-toolbar-items .e-toolbar-item .e-tbar-btn.e-btn,
+.e-schedule .e-timeline-month-view .e-work-cells.custom {
+    background-color: #313135 !important;
+    color: #FFF !important;
+    border-color: #3B3B3F !important;
+}
+
+.e-schedule .e-tbar-btn-text,
+.e-schedule .e-resource-text {
+  color: #FFF !important;
+  border-color: #3B3B3F !important;
+}
+
+.e-schedule .e-appointment {
+  border: none !important;
+}
+
+.backg {
+    position: absolute; /* Ensures background stays fixed across pages */
+    left: 60px;
+    top: 220px;
+    height: 200px;
+    width: 1800px;
+    height: 950px;
+    background-color: rgb(92, 20, 68); /* Your desired background color */
+}
+
+.Planning  {
+    position: absolute;
+    left: 23.5%;
+    top: 26%;
+}
+
+.custom-event-editor{
+  font-size: 15px;
+  height: 400px;
+}
+
+.custom-event-editor #custom{
+  width: 300px;
+  font-size: 15px;
+}
+
+.search-area #proce {
+  position: absolute;
+  right: 1410px;
+  width: 370px;
+  height: 50px;
+  top: 100px;
+  font-size: 20px;
+}
+
+.search-area #respo {
+  position: absolute;
+  right: 1410px;
+  width: 370px;
+  height: 50px;
+  top: 170px;
+  font-size: 20px;
+}
+
+.search-area #descr {
+  position: absolute;
+  right: 1410px;
+  width: 370px;
+  height: 50px;
+  top: 240px;
+  font-size: 20px;
+}
+
+.search-area #Hsearch {
+  position: absolute;
+  right: 1600px;
+  width: 150px;
+  top: 300px;
+  font-size: 20px;
+  background-color: aliceblue;
+}
+
+.search-area #Csearch {
+  position: absolute;
+  right: 1420px;
+  width: 150px;
+  top: 300px;
+  font-size: 20px;
+  background-color: #f0f8ff;
+}
+
+.search-area #Hsearch:active {
+  background-color: #949494; /* Adjust colors as needed */
+}
+
+.search-area #Csearch:active {
+  background-color: #949494; /* Adjust colors as needed */
+}
+
+.e-schedule .e-appointment-details {
+  padding: 0 !important;
+}
+
+ /* .e-schedule .e-vertical-view .e-day-wrapper .e-appointment,
+.e-schedule .e-month-view .e-appointment {
+  border: 1px solid black !important;
+  background: green !important;
+  border-radius: 2px !important;
+  color: #fff !important;
+  overflow: hidden;
+  position: absolute;
+}
+
+.e-quick-popup-wrapper .e-event-popup .e-popup-header {
+  background: green !important;
+}  */
+
+.e-schedule .e-appointment,
+.e-schedule .e-vertical-view .e-day-wrapper .e-appointment,
+.e-schedule .e-month-view .e-appointment {
+  background: none !important;
+  border: none !important;
+}
+
+.e-schedule .e-appointment .template-wrap,
+.e-schedule .e-vertical-view .e-day-wrapper .e-appointment .template-wrap,
+.e-schedule .e-month-view .e-appointment .template-wrap {
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  border-radius: 2px;
+  overflow: hidden;
+  position: absolute;
+}
+
+.green-event {
+  background-color: green !important;
+  color: #fff !important;
+}
+
+.yellow-event {
+  background-color: yellow !important;
+  color: #000 !important;
+}
+
+.orange-event {
+  background-color: orange !important;
+  color: #fff !important;
+}
+
+.colors{
+  position: absolute;
+  left: 8%;
+  top: 75%;
+}
+
+.grn {
+  background-color: green;
+  width: 80px;
+  height: 40px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.ylw {
+  background-color: yellow;
+  width: 80px;
+  height: 40px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.org {
+  background-color: orange;
+  width: 80px;
+  height: 40px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.explanation {
+  display: flex;
+  font-size: 20px;
+  color: black;
+  background-color:w;
+  align-items: center;
+  margin-bottom: 10px;
+}

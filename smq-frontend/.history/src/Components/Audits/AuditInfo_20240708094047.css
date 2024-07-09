@@ -1,0 +1,26 @@
+.auditinfo {
+    position: absolute;
+    top: 25%;
+    left: 5.5%;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    transition: transform 0.2s;
+    width: 90%;
+    height: 75%;
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.auditinfo .backauditinfo {
+        position: absolute; /* Ensures background stays fixed across pages */
+        left: -2.6%;
+        top: 10%;
+        height: 200px;
+        width: 1800px;
+        height: 950px;
+        background-color: rgb(92, 20, 68); /* Your desired background color */
+        z-index: -1;
+    }

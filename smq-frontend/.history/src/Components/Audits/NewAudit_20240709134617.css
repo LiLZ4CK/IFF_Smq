@@ -1,0 +1,92 @@
+.Auditform {
+    position: relative;
+    top: 70px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    transition: transform 0.2s;
+    width: 1500px;
+    height: 700px;
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.Auditform label {
+    font-size: 25px;
+}
+
+h1 {
+    font-size: 30px;
+    text-align: center;
+    color: rgb(92, 20, 68);
+}
+
+fieldset {
+    border: none;
+}
+
+input {
+    display: block;
+    width: 100%;
+    /* margin-bottom: 15px; */
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 12px;
+}
+input[type="radio"],
+input[type="checkbox"] {
+    display: inline;
+    width: 10%;
+}
+select {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+label {
+    font-size: 15px;
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+    margin-bottom: 5px;
+    text-align: left;
+    color: #555;
+    font-weight: bold;
+}
+
+button {
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    background-color: rgb(92, 20, 68);
+    width: 40%;
+    font-size: 16px;
+}
+textarea {
+    resize: none;
+    width: 98%;
+    min-height: 100px;
+    max-height: 150px;
+}
+
+.auditbackk {
+    position: absolute; /* Ensures background stays fixed across pages */
+    left: 60px;
+    top: 220px;
+    height: 200px;
+    width: 1800px;
+    height: 950px;
+    background-color: rgb(92, 20, 68); /* Your desired background color */
+}
