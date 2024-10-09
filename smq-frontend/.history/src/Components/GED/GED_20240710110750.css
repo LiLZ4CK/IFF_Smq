@@ -1,0 +1,64 @@
+.chonky {
+  position: absolute;
+  left: 5%;
+  top: 35%;
+  height: 70%;
+  width: 40%;
+}
+
+.test {
+  position: absolute;
+}
+
+.backdocv {
+  position: absolute;
+  left: 60px;
+  top: 170px;
+  height: 950px;
+  width: 1800px;
+  border-radius: 30px;
+  background-color: rgb(92, 20, 68);
+  z-index: -1;
+}
+
+.pdf-containera, .xlsx-container {
+  position: absolute;
+  height: 64%;
+  top: 26%;
+  right: 4%;
+  width: 50%;
+}
+
+.xlsx-container table {
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+}
+
+.xlsx-container th, .xlsx-container td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.xlsx-container th {
+  background-color: #f2f2f2;
+  color: black;
+}
+
+.xlsx-container tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.xlsx-container tr:hover {
+  background-color: #ddd;
+}
+
+.arrowback {
+  font-size: 40px;
+  position: absolute;
+  color: black;
+  left: -3%;
+  top: 33%;
+  background-color: transparent;
+}

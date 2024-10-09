@@ -1,0 +1,102 @@
+.Head {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 50px;
+  margin-bottom: 70px;
+  margin-top: 70px;
+}
+
+.header-button {
+  flex: 1;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  height: 70px;
+  font-size: 20px;
+  padding-top: 15px;
+  margin-left: 40px;
+  margin-top: 30px;
+  padding: ;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+.header-button:hover {
+  background-color: rgb(200, 28, 44);
+  color: rgb(255, 255, 255);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center; /* Center-align the .nav-table-container */
+  padding: 20px 100px; /* Adjust as needed */
+}
+
+.nav-table-container {
+  display: flex;
+  justify-content: center; /* Center-align the .nav-tables */
+  flex-wrap: wrap; /* Allow wrapping of .nav-table elements */
+}
+
+
+.nav-table {
+  flex: 1 0 auto; /* Allow the table to grow, but not shrink */
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 10px 20px; /* Adjust padding as needed */
+  margin: 10px; /* Adjust as needed */
+  overflow: hidden;
+}
+
+.nav-table h2 {
+  margin-bottom: 10px;
+  white-space: nowrap;
+  text-align: center;
+  border-bottom: 10px solid rgb(92, 20, 68);
+  padding-bottom: 20px;
+}
+
+.nav-table ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.nav-table ul li {
+  margin-bottom: 20px;
+  
+}
+
+.nav-table ul li a {
+  text-decoration: none;
+}
+
+.custom-link {
+  display: inline-block;
+  padding: 10px 20px;
+  width: 200px; /* Adjust width as needed */
+  text-align: center;
+  background-color:rgb(255, 255, 255);
+  color: black;
+  text-decoration: none;
+  border: 1px solid #666;
+  border-radius: 50px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.custom-link:hover {
+  background-color: rgb(200, 28, 44);
+  color: rgb(255, 255, 255);
+}
+
+
+.icon:hover {
+  color: rgb(200, 28, 44);
+}
+
+.icon:focus {
+  outline: none;
+}

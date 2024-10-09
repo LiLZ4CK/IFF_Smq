@@ -1,0 +1,114 @@
+.Indicateurs-list {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    table-layout: fixed;
+    font-size: 20px;
+    top: 70px;
+    left: 13px;
+    background-color: rgb(92, 20, 68);
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 160px;
+    height: 600px;
+    overflow-y: scroll;
+  }
+
+  .filter {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding-top: 50px;
+    grid-gap: 5px;  /* Introduce a small gap between elements */
+  }
+  
+  .filter input {
+    padding: 5px;
+    height: 50px;
+    width: 500px;
+    border: 1px solid #ccc;
+    margin-right: 5px;
+    flex-grow: 1;
+  }
+  
+  .filter button {
+    position: absolute;
+    left: 37%;
+    padding: 5px 10px;
+    height: 40px;
+    width: 100px;
+    background-color: rgb(200, 28, 44);
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  .newAction {
+    position: absolute;
+    left: 87%;
+    top: 6%;
+    padding: 5px 10px;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+
+    height: 40px;
+    width: 160px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+  }
+
+
+  .newAction:hover {
+    background-color: rgb(200, 28, 44);
+    color: rgb(255, 255, 255);
+  }
+
+  .Actions-header {
+    display: flex;
+    position: sticky; 
+    top: 0;
+    background-color: #f2f2f2;
+    z-index: 1;
+}
+
+  .Actions-header p{
+    margin: 0;
+    padding: 5px;
+    border: 1px solid #ddd;
+    text-align: center;
+    width: 36.66%; 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 250px;
+    background-color: #7c7676;
+  }
+  
+  .Actions p {
+    margin: 0;
+    padding: 5px;
+    border: 1px solid #ddd;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 250px;
+    background-color: #ffffff;
+  }
+  /* 
+  .Actions-header p:nth-child(5), .Actions-header p:nth-child(6), .Actions-header p:nth-child(7) {
+    width: 100px;
+  }
+  
+  .Action p:nth-child(5), .Action p:nth-child(6), .Action p:nth-child(7) {
+    width: 100px;
+  }*/
+  
+  .Actions {
+    display: flex;
+  }

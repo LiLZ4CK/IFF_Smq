@@ -1,0 +1,130 @@
+.ncForm {
+    position: absolute;
+    top: 28%;
+    left: 12%;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    transition: transform 0.2s;
+    width: 1500px;
+    height: 1540px;
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+}
+.ncForm .backnc {
+    position: absolute; /* Ensures background stays fixed across pages */
+    left: -11.2%;
+    height: 200px;
+    width: 1800px;
+    height: 1000px;
+    border-radius: 30px;
+    background-color: rgb(92, 20, 68); /* Your desired background color */
+    z-index: -1; /* Place behind content to avoid interference */
+}
+
+.ncForm h1{
+    font-size: 35px;
+}
+
+.ncForm label {
+    font-size: 20px;
+}
+.ncForm input[name="firstname"] {
+    position: relative;
+    width: 550px;
+}
+
+.ncForm input[name="lastname"] {
+    position: absolute;
+    width: 550px;
+    top: 86px;
+    left: 800px;
+}
+label[for="lastname"] {
+    position: absolute;
+    top: 45px;
+    left: 800px;
+}
+
+.ncForm input[name="email"] {
+    position: relative;
+    width: 550px;
+}
+
+.ncForm input[name="contact"] {
+    position: absolute;
+    width: 550px;
+    top: 160px;
+    left: 800px;
+}
+label[for="contact"] {
+    position: absolute;
+    top: 120px;
+    left: 800px;
+}
+
+h1 {
+    font-size: x-large;
+    text-align: center;
+    color: rgb(92, 20, 68);
+}
+
+fieldset {
+    border: none;
+}
+
+input {
+    display: block;
+    width: 100%;
+    /* margin-bottom: 15px; */
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 12px;
+}
+input[type="radio"],
+input[type="checkbox"] {
+    display: inline;
+    width: 10%;
+}
+select {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+label {
+    font-size: 15px;
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+    margin-bottom: 5px;
+    text-align: left;
+    color: #555;
+    font-weight: bold;
+}
+
+button {
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    background-color: rgb(92, 20, 68);
+    width: 40%;
+    font-size: 16px;
+}
+textarea {
+    resize: none;
+    width: 98%;
+    min-height: 100px;
+    max-height: 150px;
+}

@@ -1,0 +1,145 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                      Int     @id @unique @default(autoincrement())
+  name                    String  @unique
+  email                   String  @unique
+  password                String
+  roleName                String?
+  isvirified              Boolean @default(false)
+  VerificationCode        String  @default("0")
+
+}
+
+model fichier {
+  id                      Int     @id @unique @default(autoincrement())
+  path                    String
+  name                    String
+  group                   String
+  redacteur               String
+  dateCreation            DateTime @default(now())
+  typeDoc                 String
+  processus               String
+  natureDoc               String?
+  produit                 String?
+  service                 String?
+  compleme                String?
+  commentaire             String?
+}
+
+model Role {
+  id                      Int          @id @default(autoincrement())
+  name                    String       @unique
+  permissions             Permission[]
+}   
+
+enum Permission {
+  CONSULT
+  EDIT
+  DOWNLOAD
+}
+
+model Audit {
+  id                 Int      @id @default(autoincrement())
+  type               String
+  code               String
+  responsableId      Int
+  processus          String
+  lieu               String   @default("IFF")
+  status             Int      @default(0)
+  path               String?
+  constat            String?
+  constatType        String?
+  planningDate       DateTime?
+  realisationDate    DateTime?
+}
+
+
+model Nconform {
+  id                 Int        @id @default(autoincrement())
+  responsables       String[]
+  processus          String
+  constats           String
+  origine            String
+  constatdate        DateTime
+  acorrective        String
+  refqualite         String
+  type               String
+  aimmediates        String[]
+}
+
+model Action {
+  id                 Int        @id @default(autoincrement())
+  responsableId      Int
+  code               String
+  priorite           String
+  libelle            String
+  type               String
+  echeance           String
+  status             String
+  cout               Int
+}
+
+model Processus {
+  id                  Int       @id @default(autoincrement())
+  pdescriptionId      Int?      @unique
+  name                String
+  type                String
+  responsableId       Int
+  element             String
+  pilot               String
+  finalite            String
+  indicateurEobject   String
+}
+
+model Pdescription{
+  id                  Int       @id @default(autoincrement())
+  processusId         Int       @unique
+  msurvielle          String[]
+  mhumains            String[]
+  dentree             String[]
+  aprocessus          String[]
+  dsortie             String[]
+  responsable         String[]
+  iobjectifs          String[]
+  dassocies           String[]
+
+}
+
+model Risque {
+  id                  Int       @id @default(autoincrement())
+  processusId         Int
+  processusname       String
+  type                String
+  libelle             String
+  categorie           String
+  description         String
+  consequence         String
+  maitrise            String
+}
+
+model Indicateur {
+  id                Int @id @default(autoincrement())
+  processusId       Int
+  responsableId     Int
+  frequence         String
+  formulDcalcul     String
+  object            String
+
+
+}
+
+//npx ts-node seed.ts   

@@ -1,0 +1,154 @@
+.App {
+  text-align: center;
+
+}
+
+.global-background {
+  position: absolute; /* Ensures background stays fixed across pages */
+  left: 60px;
+  top: 170px;
+  height: 200px;
+  width: 1800px;
+  height: 670px;
+  border-radius: 30px;
+  background-color: rgb(92, 20, 68); /* Your desired background color */
+  z-index: -1; /* Place behind content to avoid interference */
+}
+
+.sett{
+  position: absolute;
+  background-color: transparent;
+  width: 30px;
+  left: 1690px;
+  top: -10px;
+}
+
+.sett .icon{
+  position: relative;;
+  font-size: 25px;
+}
+.info{
+  position: absolute;
+  background-color: transparent;
+  width: 30px;
+  left: 1730px;
+  top: -10px;
+
+}
+.info .icon{
+  position: relative;;
+  font-size: 25px;
+}
+.notifo{
+  position: absolute;
+  background-color: transparent;
+  width: 30px;
+  left: 1650px;
+  top: -10px;
+
+}
+.notifo .icon{
+  position: relative;;
+  font-size: 25px;
+}
+.quali{
+  position: absolute;
+  top: -45%;
+  left: 1%;
+}
+
+.Name{
+  position: absolute;
+  right: 155px;
+  font-size: 25px;
+  color: rgb(255, 255, 255);
+  top: 12px;
+}
+
+.settings-list {
+  position: fixed; /* Or absolute for relative positioning */
+  width: 30px;
+  left: 1700px;
+  height: 110px;
+  width: 200px;
+  padding: 20px;
+  /* Higher z-index to appear on top */
+  z-index: 10; /* Adjust as needed */
+  background-color: beige;
+}
+
+.Navbar {
+position: absolute;
+top: 160px;
+left: 60px;
+padding-left: 20px;
+padding-right: 20px;
+padding-top: -30px;
+border-radius: 120px;
+background-color: rgb(136, 124, 132);
+height: 70px;
+width: 1800px;
+}
+
+
+.navbar-brand{
+  color: azure;
+  font-size: 30px;
+  text-decoration: none;
+
+}
+
+.nav-link {
+  position: relative;
+  color: rgb(255, 255, 255);
+  margin-left: 70px;
+  font-size: 20px;
+  text-decoration: none;
+
+  }
+
+.App-logo {
+  position: absolute;
+  left: 3%;
+  top: 0%;
+  height: 16%;
+  pointer-events: none;
+}
+
+.boraq {
+  position: absolute;
+  left: 14%;
+  top: 0%;
+  height: 18%;
+  width: 83%;
+}
+
+.afaq {
+  position: fixed;
+  left: 3%;
+  height: 7%;
+  bottom: 10px;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10% + 2%);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.spinner {
+  size: 1000px;
+  background-color: royalblue;
+  color: aliceblue;
+  
+}
+
